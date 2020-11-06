@@ -1,81 +1,50 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, {useState} from 'react';
-import {Button, Grid} from '@material-ui/core';
-import {createMuiTheme, ThemeProvider, makeStyles} from '@material-ui/core/styles';
-import {green} from '@material-ui/core/colors';
+import data from './testData.js';
+import QuizPage from './QuizPage.js';
+import H1 from './styles/H1.js';
+import Button from './styles/Button.js'
 
-const theme = createMuiTheme({
-  typography: {
-    button:{
-      margin: '50px',
-      height: '50px',
-      fontSize: '18px',
-      color:'white'
-    },
-    h3: {
-      size:'10px',
-    }
-  },
-  palette: {
-    primary: green
-  },
-})
 
-const useStyles = makeStyles((theme) => ({
-
-  root: {
-    flexGrow: 1,
-  },
- 
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    
-  },
-}));
 
 
 function App() {
-  const classes = useStyles();
+
   const [enter, setEnter] = useState(false);
   const [play, setPlay] =  useState(false);
   if(enter) {
     return (
      
       <div className="App">
-         <ThemeProvider theme={theme}>
-        <Grid >
+ 
+   
         <header className="App-header">
-          Ready to Play?
+          <H1>Ready to Play?</H1>
           
-          <Button variant="contained" color="primary" onClick={() => {setPlay(true)}}>Play</Button>
+          <Button onClick={() => {setPlay(true); setEnter(false)}}>Play</Button>
 
          
         </header>
-        </Grid>
-        </ThemeProvider>
+      
       </div>
      
     );
    
-  } else {
+  } else if(play){
+    return (
+      <QuizPage data={data} > </QuizPage>)
+  }else {
     return (
       <div className="App">
-      <ThemeProvider theme={theme}>
-      <Grid 
-      container 
-      direction={"column"}
-      spacing={4}>
+   
       <header className="App-header">
-        Rebel Rock Trivia
+        <H1>Rebel Rock Trivia</H1>
         <h3 > The trivia game where politics and music collide</h3> 
         
-        <Button variant="contained" color="primary" onClick={() => {setEnter(true)}}>Enter</Button>
+        <Button onClick={() => {setEnter(true)}}>Enter</Button>
       </header>
-      </Grid>
-      </ThemeProvider>
+
     </div>
     )
   

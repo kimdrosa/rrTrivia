@@ -1,0 +1,19 @@
+let data = {
+    q1: {
+        question: 'test?',
+        correct: 'bagel',
+        answers: ['eggs', 'cereal', 'pancake', 'bagel']
+    },
+    q2: {
+        question: 'what is my name?',
+        correct: 'kim',
+        answers: ['xochi', 'belmont', 'benny', 'kim']
+    },
+    q3: {
+        question: 'hello?',
+        correct: 'world',
+        answers: ['xochi', 'belmont', 'benny', 'world']
+    }
+}
+
+export default data;
