@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 const Answer = styled.button`
     text-align: center;
-    background-color: #4ccf4c;
-    border-radius: 5px;
-    font-size: 30px;
-    border: none;
+    background-color: white;
+    border-radius: 2px;
+    font-size: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
     width: 100%;
     padding:14px;
 

@@ -4,7 +4,8 @@ import React, {useState} from 'react';
 import data from './testData.js';
 import QuizPage from './QuizPage.js';
 import H1 from './styles/H1.js';
-import Button from './styles/Button.js'
+import Paper from './styles/Paper.js';
+import Button from './styles/Button.js';
 
 
 
@@ -37,14 +38,14 @@ function App() {
   }else {
     return (
       <div className="App">
-   
-      <header className="App-header">
+        
+        <Paper>
         <H1>Rebel Rock Trivia</H1>
         <h3 > The trivia game where politics and music collide</h3> 
-        
         <Button onClick={() => {setEnter(true)}}>Enter</Button>
-      </header>
+        </Paper>
 
+        
     </div>
     )
   

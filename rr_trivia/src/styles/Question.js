@@ -3,13 +3,13 @@ import QuizPage from '../QuizPage';
 
 const Question = styled.div`
     text-align: center;
-    width: 50vw;
+   
     border-radius: 5px;
     padding: 20px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
-    margin:auto;
-    background-color: #4ccf4c;
+  
+    /* background-color: #e1e3e2; */
     color: #292e29;
 `
 
