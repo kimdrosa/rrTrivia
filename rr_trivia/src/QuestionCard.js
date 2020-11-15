@@ -15,7 +15,8 @@ class QuestionCard extends React.Component {
         super(props);
         this.isCorrect = this.isCorrect.bind(this);
         this.state = {
-            correct: null
+            correct: null,
+            answered: false
         };
     }
 
@@ -25,9 +26,9 @@ class QuestionCard extends React.Component {
     //checks if clicked answer is the correct answer
     isCorrect (q, ans){ 
         if(q === ans) {
-            this.setState({correct: true});
+            this.setState({correct: true, answered:true});
         } else {
-            this.setState({correct: false});
+            this.setState({correct: false, answered: true});
         }
     }
         
@@ -47,19 +48,19 @@ class QuestionCard extends React.Component {
          return <Answer key={Math.random()} onClick={()=>{this.isCorrect(this.props.data.q1.correct, answer)}}>{answer}</Answer>
            } else if(this.state.correct === true)  {
                if(answer === this.props.data.q1.correct) {
-               return <Answer style={{backgroundColor:'green'}} key={Math.random()} >{answer}</Answer>
+               return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                } else {
-                   return <Answer style={{backgroundColor:'grey'}} key={Math.random()} >{answer}</Answer>
+                   return <Answer style={{backgroundColor:'grey', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                }
            }  else if(this.state.correct === false)  {
             if(answer === this.props.data.q1.correct) {
-                return <Answer style={{backgroundColor:'green'}} key={Math.random()} >{answer}</Answer>
+                return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                 } else {
-            return <Answer style={{backgroundColor:'red'}} key={Math.random()} >{answer}</Answer>
+            return <Answer style={{backgroundColor:'red', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                 }
         }
        })}
-       {/* <Answer> {this.props.data.q1.answers[1]}</Answer> */}
+    
        </Answers>
        </QuestionAndAnswers>
        </Paper>
