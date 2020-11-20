@@ -28,8 +28,10 @@ class QuizPage extends React.Component {
 
     componentDidMount() {
       //randomize questions and store them
-
-      console.log(this.props.data)
+      this.setState({
+        questions : this.props.data
+      })
+      console.log(this.state.questions)
       // let questionKeys = this.props.data;
       // let qs = [];
       // for(var i = 0; i < questionKeys.length; i++) {
@@ -81,7 +83,8 @@ class QuizPage extends React.Component {
       let questions = this.state.questions;
       let currentQuestionIndex = this.state.currentQuestion;
       let currentQuestion = questions[currentQuestionIndex];
-      console.log(currentQuestion)
+      //get Answer A, Answer B, Answer C and Answer D
+      
     if(currentQuestionIndex === questions.length){
       return(
         <Paper>
@@ -91,6 +94,17 @@ class QuizPage extends React.Component {
       )
 
     } else if(questions.length > 0) {
+      function getAnswers() {
+        let answers = [];
+        answers.push(currentQuestion.answerA);
+        answers.push(currentQuestion.answerB);
+        answers.push(currentQuestion.answerC);
+        answers.push(currentQuestion.answerD);
+
+        currentQuestion.answers = answers;
+      }
+      getAnswers();
+      console.log(currentQuestion.answerA);
     return(
     <div>
     <Score>{this.state.numQuestions}/{this.state.questions.length}</Score>

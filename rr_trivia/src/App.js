@@ -7,27 +7,26 @@ import H1 from './styles/H1.js';
 import Paper from './styles/Paper.js';
 import Button from './styles/Button.js';
 import axios from 'axios';
+import questions from './questions.json';
 
-
-function getQuestions() {
-  let results;
-  axios.get('/api/getQuestions')
-  .then((response) => {
-    results = response;
-  })
-  .catch((error)=> {
-    console.log(error);
-  })
-  return results;
-}
+// function getQuestions() {
+//   let results;
+//   axios.get('/api/getQuestions')
+//   .then((response) => {
+//     results = response;
+//   })
+//   .catch((error)=> {
+//     console.log(error);
+//   })
+//   return results;
+// }
 
 function App() {
-    let results = getQuestions();
+    // let results = getQuestions();
     
  
   const [enter, setEnter] = useState(false);
   const [play, setPlay] =  useState(false);
-  console.log(results);
   if(enter) {
     return (
      
@@ -48,7 +47,7 @@ function App() {
    
   } else if(play){
     return (
-      <QuizPage data={results} > </QuizPage>)
+      <QuizPage data={questions} > </QuizPage>)
   }else {
     return (
       <div className="App">
