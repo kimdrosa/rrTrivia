@@ -4,7 +4,7 @@ const Answer = styled.button`
     text-align: center;
     background-color: white;
     border-radius: 2px;
-    font-size: 20px;
+    font-size: 25px;
     border-style: solid;
     border-color: black;
     border-width: 2px;

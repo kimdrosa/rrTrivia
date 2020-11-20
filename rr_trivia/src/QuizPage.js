@@ -3,9 +3,12 @@ import { render } from 'react-dom';
 import Question from './styles/Question.js';
 import Answer from './styles/Answer.js';
 import Answers from './styles/Answers.js';
+import QuestionPaper from './styles/QuestionPaper.js'
 import QuestionAndAnswers from './styles/QuestionAndAnswers.js';
 import Paper from './styles/Paper.js';
 import Score from './styles/Score.js';
+import Button from './styles/Button.js';
+import App from './App.js';
 
 
 
@@ -25,21 +28,23 @@ class QuizPage extends React.Component {
 
     componentDidMount() {
       //randomize questions and store them
-      let questionKeys = Object.keys(this.props.data);
-      let qs = [];
-      for(var i = 0; i < questionKeys.length; i++) {
-        let randIndx = Math.floor(Math.random(questionKeys.length));
-        let newVal = questionKeys[randIndx];
-        questionKeys[randIndx] = questionKeys[i];
-        questionKeys[i] = newVal;
-        }
+
+      console.log(this.props.data)
+      // let questionKeys = this.props.data;
+      // let qs = [];
+      // for(var i = 0; i < questionKeys.length; i++) {
+      //   let randIndx = Math.floor(Math.random(questionKeys.length));
+      //   let newVal = questionKeys[randIndx];
+      //   questionKeys[randIndx] = questionKeys[i];
+      //   questionKeys[i] = newVal;
+      //   }
   
-      for(var j = 0; j < questionKeys.length; j++) {
-        qs.push(this.props.data[questionKeys[j]]);
-      }
-      this.setState({
-        questions: qs
-      })
+      // for(var j = 0; j < questionKeys.length; j++) {
+      //   qs.push(this.props.data[questionKeys[j]]);
+      // }
+      // this.setState({
+      //   questions: qs
+      // })
     }
 
 
@@ -79,14 +84,17 @@ class QuizPage extends React.Component {
       console.log(currentQuestion)
     if(currentQuestionIndex === questions.length){
       return(
-        <Paper><h2>You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2></Paper>
+        <Paper>
+          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
+          <Button>Play Again?</Button>
+        </Paper>
       )
 
     } else if(questions.length > 0) {
     return(
     <div>
     <Score>{this.state.numQuestions}/{this.state.questions.length}</Score>
-    <Paper>
+    <QuestionPaper>
       <QuestionAndAnswers>
        <Question>{currentQuestion.question}</Question>
        <Answers>
@@ -103,14 +111,14 @@ class QuizPage extends React.Component {
             if(answer === currentQuestion.correct) {
                 return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                 } else {
-            return <Answer style={{backgroundColor:'red', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+            return <Answer style={{backgroundColor:'#e34b4b', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                 }
         }
        })}
     
        </Answers>
        </QuestionAndAnswers>
-       </Paper>
+       </QuestionPaper>
        </div>
 
     )

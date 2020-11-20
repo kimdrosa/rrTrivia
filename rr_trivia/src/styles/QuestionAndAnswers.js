@@ -5,7 +5,6 @@ const QuestionAndAnswers = styled.div`
     grid-gap: 30px;
 
     margin: auto;
-    width: 50vw;
 
     
 `

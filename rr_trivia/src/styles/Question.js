@@ -4,8 +4,8 @@ import QuizPage from '../QuizPage';
 const Question = styled.div`
     text-align: center;
    
-    border-radius: 5px;
-    padding: 20px;
+    /* border-radius: 5px; */
+    padding: 10px;
     font-size: 30px;
     font-weight: 500;
   

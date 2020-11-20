@@ -1,8 +1,8 @@
 .App {
   text-align: center;
-  height: 100vh;
-  margin:0px;
-  background-color:#F0F0F0;
+  display: grid;
+  width: 100%;
+  background-image: url("./assests/rainbowFists.png");
 
 }
 

@@ -4,8 +4,8 @@ const H1 = styled.h1`
 
 font-family: 'Ariel', sans-serif;
 font-weight: 900;
-font-size: 60px;
-font-style: italic;
+font-size: 50px;
+color: white;
 
 `
 

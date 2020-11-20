@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Score = styled.div`
     text-align: left;
     background-color: lightgray;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     width: 80px;
     padding:14px;
