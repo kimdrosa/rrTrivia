@@ -91,21 +91,6 @@ class QuizPage extends React.Component {
     //returns: number of questions out of total, the score, the time remaining 
     //and the question with four answers
     render () {
-      
-      let questions = this.state.questions;
-      let currentQuestionIndex = this.state.currentQuestion;
-      let currentQuestion = questions[currentQuestionIndex];
-      //get Answer A, Answer B, Answer C and Answer D
-      
-    if(currentQuestionIndex === questions.length){
-      return(
-        <Paper>
-          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
-          <Button>Play Again?</Button>
-        </Paper>
-      )
-
-    } else if(questions.length > 0) {
       function getAnswers() {
         let answers = [];
         answers.push(currentQuestion.answerA);
@@ -122,7 +107,23 @@ class QuizPage extends React.Component {
         }
         currentQuestion.answers = answers;
       }
+      let questions = this.state.questions;
+      let currentQuestionIndex = this.state.currentQuestion;
+      let currentQuestion = questions[currentQuestionIndex];
+      //get Answer A, Answer B, Answer C and Answer D
+      
+    if(currentQuestionIndex === questions.length){
+      return(
+        <Paper>
+          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
+          <Button>Play Again?</Button>
+        </Paper>
+      )
+
+    } else if(questions.length > 0) {
+        if(!currentQuestion.answers){
       getAnswers();
+        }
       console.log(currentQuestion.answerA);
     return(
     <div>
@@ -138,13 +139,13 @@ class QuizPage extends React.Component {
                if(answer === currentQuestion.correct) {
                return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                } else {
-                   return <Answer style={{backgroundColor:'grey', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                   return <Answer style={{backgroundColor:'#b3b5b4', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                }
            }  else if(this.state.correct === false)  {
             if(answer === currentQuestion.correct) {
-                return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                return <Answer style={{backgroundColor:'#07b822', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                 } else {
-            return <Answer style={{backgroundColor:'#e34b4b', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+            return <Answer style={{backgroundColor:'#fc8f8d', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
                 }
         }
        })}
