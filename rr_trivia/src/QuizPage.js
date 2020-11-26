@@ -7,6 +7,7 @@ import QuestionPaper from './styles/QuestionPaper.js'
 import QuestionAndAnswers from './styles/QuestionAndAnswers.js';
 import Paper from './styles/Paper.js';
 import Score from './styles/Score.js';
+import Count from './styles/Count.js';
 import Button from './styles/Button.js';
 import App from './App.js';
 
@@ -21,6 +22,7 @@ class QuizPage extends React.Component {
             questions: [],
             currentQuestion: 0,
             correct: null,
+            score : 0,
             numCorrect: 0,
             numQuestions: 0
         };
@@ -72,7 +74,8 @@ class QuizPage extends React.Component {
                 correct: null, 
                 currentQuestion: this.state.currentQuestion + 1,
                 numCorrect: this.state.numCorrect + 1,
-                numQuestions: this.state.numQuestions + 1}
+                numQuestions: this.state.numQuestions + 1,
+                score : this.state.score + 100}
                 )},2000)
 
         } else {
@@ -116,6 +119,7 @@ class QuizPage extends React.Component {
       return(
         <Paper>
           <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
+          <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
           <Button>Play Again?</Button>
         </Paper>
       )
@@ -127,7 +131,8 @@ class QuizPage extends React.Component {
       console.log(currentQuestion.answerA);
     return(
     <div>
-    <Score>{this.state.numQuestions}/{this.state.questions.length}</Score>
+    <Count>{this.state.numQuestions}/{this.state.questions.length}
+    <Score>Score: {this.state.score}</Score></Count>
     <QuestionPaper>
       <QuestionAndAnswers>
        <Question>{currentQuestion.question}</Question>
@@ -149,10 +154,10 @@ class QuizPage extends React.Component {
                 }
         }
        })}
-    
        </Answers>
        </QuestionAndAnswers>
        </QuestionPaper>
+    
        </div>
 
     )

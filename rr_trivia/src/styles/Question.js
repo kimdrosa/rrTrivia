@@ -6,7 +6,7 @@ const Question = styled.div`
    
     /* border-radius: 5px; */
     padding: 10px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
   
     /* background-color: #e1e3e2; */
