@@ -30,7 +30,9 @@ class QuizPage extends React.Component {
             numCorrect: 0,
             numQuestions: 0,
             isTimeUp: false,
-            round: 'basic'
+            round: 'basic',
+            time: 15000
+           
         };
     }
 
@@ -55,25 +57,38 @@ class QuizPage extends React.Component {
 
 
     advanceRound () {
-      if(this.state.state === 'basic') {
+ 
+      if(this.state.round === 'basic') {
         this.setState({
           round: 'radRound',
-          questions : this.getQuestionsForRound()
+          questions : this.getQuestionsForRound(),
+          currentQuestion : 0,
+          isTimeUp: false,
+          time : 15000
         })
-      } else if(this.state.state === 'radRound') {
+      } else if(this.state.round === 'radRound') {
         this.setState({
           round: 'rebelRound',
-          questions : this.getQuestionsForRound()
+          questions : this.getQuestionsForRound(),
+          currentQuestion : 0,
+          isTimeUp: false,
+          time : 15000
         }) 
-      } else if(this.state.state === 'rebelRound') {
+      } else if(this.state.round === 'rebelRound') {
           this.setState({
             round: 'resRound',
-            questions : this.getQuestionsForRound()
+            questions : this.getQuestionsForRound(),
+            currentQuestion : 0,
+            isTimeUp: false,
+            time : 15000
           })
-      } else if(this.state.state === 'resRound') {
+      } else if(this.state.round === 'resRound') {
         this.setState({
           round: 'revRound',
-          questions : this.getQuestionsForRound()
+          questions : this.getQuestionsForRound(),
+          currentQuestion : 0,
+          isTimeUp: false,
+          time : 15000
         })
       }
     }
@@ -82,10 +97,11 @@ class QuizPage extends React.Component {
       let results = []
       for(var i = 0; i < this.props.advanced.length; i++) {
         if(this.props.advanced[i].round === this.state.round) {
-          results.push(this.props.advanced);
-          return results;
+          results.push(this.props.advanced[i]);
+          
         }
       }
+      return results;
     }
 
     //checks if clicked answer is the correct answer
@@ -155,7 +171,7 @@ class QuizPage extends React.Component {
         <Paper>
           <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
           <h2 style={{color:'white'}}> Your final score was {this.state.score}! You did well enough to go to the next round</h2>
-          <Button onClick= {this.advanceRound()} > Continue to next Round</Button>
+          <Button onClick= {() => {this.advanceRound()}} > Continue to next Round</Button>
         </Paper>
       ) }
       else if(questions.length > 0) {
@@ -169,8 +185,9 @@ class QuizPage extends React.Component {
         <Count>{this.state.numQuestions}/{this.state.questions.length}
         <Score>Score: {this.state.score}</Score></Count>
         <Time>
-        <Timer   initialTime={15000}
+        <Timer   initialTime={this.state.time}
           direction="backward"
+
           checkpoints={[
             {time: 0,
             callback: () => {this.setState({isTimeUp: true})}}
