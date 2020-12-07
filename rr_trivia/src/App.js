@@ -6,8 +6,15 @@ import QuizPage from './QuizPage.js';
 import H1 from './styles/H1.js';
 import Paper from './styles/Paper.js';
 import Button from './styles/Button.js';
+import Button2 from './styles/Button2.js';
 import axios from 'axios';
-import questions from './questions.json';
+import questions from './questions/questions.json';
+import rebelRappers from './questions/rebelRappers.json';
+import rrMix from './questions/rrMix.json';
+import advanced from './questions/advanced.json';
+import shutUpAndSing from './questions/shutUpAndSing.json';
+import hallOfFame from './questions/hallOfFame.json'
+
 
 // function getQuestions() {
 //   let results;
@@ -27,6 +34,7 @@ function App() {
  
   const [enter, setEnter] = useState(false);
   const [play, setPlay] =  useState(false);
+  const [category, setCategory] = useState(questions);
   if(enter) {
     return (
      
@@ -34,9 +42,13 @@ function App() {
  
    
           <Paper>
-          <H1>Ready to Play?</H1>
-          
-          <Button onClick={() => {setPlay(true); setEnter(false)}}>Play</Button>
+            <H1>Choose a Category </H1>
+            <div style={{display:"grid", gridGap:"20px", gridTemplateColumns:"1fr 1fr"}}>
+            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(rebelRappers)}}> Rebel Rappers </Button2>
+            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(rrMix)}}> Rebel Rock Mix </Button2>
+            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(hallOfFame)}}> Hall of Fame </Button2>
+            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(shutUpAndSing)}}> Shut Up And Sing </Button2>
+            </div>
           </Paper>
          
        
@@ -47,7 +59,7 @@ function App() {
    
   } else if(play){
     return (
-      <QuizPage data={questions} > </QuizPage>)
+      <QuizPage data={category} advanced={advanced}> </QuizPage>)
   }else {
     return (
       <div className="App">

@@ -1,0 +1,533 @@
+[
+    {
+        "question": "RAD ROUND- This U.S. president once told radio broadcasters that rock lyrics should be screened for content and that any music containing drug references should be banned.",
+        "correct": "Richard Nixon",
+        "answerA": "Richard Nixon",
+        "answerB": "Donald Trump",
+        "answerC": "Ronald Reagan",
+        "answerD": "George W Bush",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- \"House Burning Down\", a 1970 song critical of rioters who burn down their own neighborhoods to protest racial injustice, was written and performed by who?",
+        "correct": "Jimi Hendricks",
+        "answerA": "Jimi Hendricks",
+        "answerB": "Carlos Santana",
+        "answerC": "Eric Clapton",
+        "answerD": "Sly Stone",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- This member of Rage Against the Machine was arrested with Union of Garment Worker organizers in 1997 for civil disobedience in Santa Monica protesting the use of sweatshop labor by the clothing company Guess.",
+        "correct": "Tom Morello",
+        "answerA": "Tom Morello",
+        "answerB": "Zack de la Rocha",
+        "answerC": "Tim Commerford",
+        "answerD": "Brad Wilk",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- This founder of the afro-beat genre was arrested about 200 times by the Nigerian police and military forces due to his political activism and his socially conscious music.",
+        "correct": "Fela Kuti",
+        "answerA": "Fela Kuti",
+        "answerB": "King Sunny Adé",
+        "answerC": "Sun Ra",
+        "answerD": "Femi Kuti",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- Why did Jessie Jackson call for a radio station ban on disco music in 1977?",
+        "correct": "Because it promotes promiscuity and drug use.",
+        "answerA": "Because it promotes promiscuity and drug use.",
+        "answerB": "Because it exploits, and demeans women and girls",
+        "answerC": "Because Black musicians were getting discriminated against with pay.",
+        "answerD": "Because it promoted negative stereotypes of Blacks and gays",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- In 1971 the popular funk band Sly and the Family Stone released their 5th studio album. What was the title of the record?",
+        "correct": "There's a Riot Goin On",
+        "answerA": "There's a Riot Goin On",
+        "answerB": "Stand",
+        "answerC": "Fresh",
+        "answerD": "Life",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- In what country did a group of teenagers receive 91 lashes and 6 months in jail in 2014 for making a video of themselves dancing to the Pharrell William's song \"Happy\"?",
+        "correct": "Iran",
+        "answerA": "Iran",
+        "answerB": "Saudi Arabia",
+        "answerC": "China",
+        "answerD": "Singapore",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- This radical 1960's musician from Chile once said \"The authentic revolutionary should be behind a guitar, so the guitar becomes an instrument of struggle, so  it... shoot[s] like a gun.\"",
+        "correct": "Victor Jara",
+        "answerA": "Victor Jara",
+        "answerB": "Silvio Rodríguez",
+        "answerC": "Atahualpa Yupanqui",
+        "answerD": "Eduardo Carrasco",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- This 1950's DJ refused to play white cover versions of black songs, in  protest of racial segregation in broadcast radio.",
+        "correct": "Alan Freed",
+        "answerA": "Alan Freed",
+        "answerB": "Howard Stern",
+        "answerC": "Dick Clark",
+        "answerD": "Wolfman Jack",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The David Bowie record \"Rebel Rebel,\" a 1974 song about a cross dressing youth who wears tacky women's cloths, appears on what album?",
+        "correct": "Diamond Dogs",
+        "answerA": "Diamond Dogs",
+        "answerB": "Aladdin Sane",
+        "answerC": "Young Americans",
+        "answerD": "Station to Station",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- This radical folk singer refused to cooperate with the House of Unamerican Activities Committee in their witch-hunt against communists in 1955 and was sentenced to a year in jail.",
+        "correct": "Pete Seeger",
+        "answerA": "Pete Seeger",
+        "answerB": "Utah Phillips",
+        "answerC": "Lead Belly",
+        "answerD": "Mary Travers",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- The Clash's 4th album was named after a successful socialist revolution in Central America in 1979. What was the name of the album?",
+        "correct": "Sandinista!",
+        "answerA": "Sandinista!",
+        "answerB": "London Calling",
+        "answerC": "Combat Rock",
+        "answerD": "Give Em Enough Rope",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- Which famous beat poet appeared in Bob Dylan's \"Subterranean Homesick Blues\" video in 1965? ",
+        "correct": "Allen Ginsburg",
+        "answerA": "Allen Ginsburg",
+        "answerB": "Jack Kerouac",
+        "answerC": "Gregory Corso",
+        "answerD": "Lawrence Ferlinghetti",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The Cherry Poppin' Daddies released this song in 1997 the title of which refers to a series of confrontations in 1943 in LA where Mexican Youth were attacked by US soldiers.",
+        "correct": "The Zoot Suit Riots",
+        "answerA": "The Zoot Suit Riots",
+        "answerB": "The Brown Shirts Riots",
+        "answerC": "The West Coast War Riots",
+        "answerD": "The Boot Suit Riots",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- In 2000 this female rock singer from Ohio was arrested along with other People for the Ethical Treatment of Animals activists at a Gap store for slashing leather products.",
+        "correct": "Chrissie Hynde",
+        "answerA": "Chrissie Hynde",
+        "answerB": "Natalie Merchant",
+        "answerC": "Alison Moyet",
+        "answerD": "Tracy Chapman",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- This 1970's, New York based, art rock band is said to have inspired the democratic revolution in Czechoslovakia in 1989.",
+        "correct": "The Velvet Underground",
+        "answerA": "The Velvet Underground",
+        "answerB": "Sonic Youth",
+        "answerC": "Kraftwerk",
+        "answerD": "Devo",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- The spoken word album An American Prayer by Jim Morrison and the Doors was nominated for a Grammy in what year?",
+        "correct": "1978",
+        "answerA": "1978",
+        "answerB": "1956",
+        "answerC": "1983",
+        "answerD": "1999",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- This 1990 song by X Clan recalls a New York City-wide protest against police brutality on 1989 when demonstrators took over the Brooklyn Bridge. What was the title of the song?",
+        "correct": "\"A Day of Outrage, Operation Snatchback\"",
+        "answerA": "\"A Day of Outrage, Operation Snatchback\"",
+        "answerB": "\"Days of Rage, Operation Take it Back\"",
+        "answerC": "\"Chaos Days- Operation Stand Up for Justice\"",
+        "answerD": "\"A Day of Confrontation- Operation Take it to the Bridge\"",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- This  Cameroonian singer was imprisoned in 2008 after criticizing Cameroon president Paul Biya in the song \"Constitution constipée.\" ",
+        "correct": "Lapiro de Mbanga",
+        "answerA": "Lapiro de Mbanga",
+        "answerB": "Emile Kangue",
+        "answerC": "Sam Fan Thomas",
+        "answerD": "Moni Bile",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- This famous black leftist poet came into prominence in the late 1960's with the groundbreaking piece \"The Revolution Will Not be Televised.\"",
+        "correct": "Gil Scott Heron",
+        "answerA": "Gil Scott Heron",
+        "answerB": "Abiodun Oyewole",
+        "answerC": "Gylan Kain",
+        "answerD": "Amiri Baraka",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- What is the subtitle of the 1872 book \"The Birth of Tragedy\" by German philosopher Fredrick Nietzsche about the classical German romantic composer Richard Wagner? ",
+        "correct": "\"Through the Spirit of Music\"",
+        "answerA": "\"Through the Spirit of Music\"",
+        "answerB": "\"Through War\"",
+        "answerC": "\"Through Weakness\"",
+        "answerD": "\"Through the Spirit of Romance\"",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The Southern California band Sublime released the song \"April 29, 1992 (Miami)\" in 1996. What was the song about?",
+        "correct": "The LA Uprising against police brutality",
+        "answerA": "The LA Uprising against police brutality",
+        "answerB": "The 1968 police riot at the Democratic National Convention in Chicago",
+        "answerC": "Looting in Miami after Hurricane Janice",
+        "answerD": "Unrest in Miami after a security guard shot an 11 year old in the back",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- Calypso singer Harry Belafonte was arrested outside of this embassy in 1985 protesting Apartited.",
+        "correct": "South African",
+        "answerA": "South African",
+        "answerB": "Egypt",
+        "answerC": "Chad",
+        "answerD": "Nigeria",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- This singer who has been called \"the voice of Egypt\" released the song \"#Jan25\"- a 2011 record about the revolutionary movement that ousted Hosni Mubarak and the role that Twitter played in spreading the revolution. ",
+        "correct": "Mohamed Mounir",
+        "answerA": "Mohamed Mounir",
+        "answerB": "Amr Diab",
+        "answerC": "Hany Shaker",
+        "answerD": "Tamer Hosny",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- Who said this \"For art to be \"unpolitical\" means only to ally itself with the 'ruling' group.'\" ",
+        "correct": "Playwrite and Artist Bertolt Brecht",
+        "answerA": "Playwrite and Artist Bertolt Brecht",
+        "answerB": "Musician and Activist Penny Rimbaud",
+        "answerC": "Poet and Essayist Antonin Artaud",
+        "answerD": "Composer Kurt Weill",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The Public Enemy song \"Black Steel in the Hour of Chaos\" off the 1988 album It Takes a Nation of Millions to Hold us Back, was a fictional account of what?",
+        "correct": "A prison uprising",
+        "answerA": "A prison uprising",
+        "answerB": "A race war",
+        "answerC": "A street protest",
+        "answerD": "A street battle during war time",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- This Agit Prop punk feminist group from Russia was arrested in March 2012 after performing an anti-Putin \"punk prayer\" inside Moscow's Cathedral of Christ the Saviour",
+        "correct": "Pussy Riot",
+        "answerA": "Pussy Riot",
+        "answerB": "The Living Theater",
+        "answerC": "Agit-prop",
+        "answerD": "Kraftwerk",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- The song \"A las Barricadas\" (\"To the Barricades\") written by Valeriano Orobón Fernández in 1936, was a popular revolutionary song with anarchists during what conflict?",
+        "correct": "The Spanish Civil War",
+        "answerA": "The Spanish Civil War",
+        "answerB": "World War II",
+        "answerC": "World War I",
+        "answerD": "The Spanish American War",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- The Ronnie Dyson song \"Aquarius\" a late 1960's anthem for the counterculture, appeared in what famous musical?",
+        "correct": "Hair",
+        "answerA": "Hair",
+        "answerB": "West Side Story",
+        "answerC": "Jesus Christ Superstar",
+        "answerD": "Rent",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The female folk singer  Madeline Davis wrote this song after attending her first gay and lesbian rights march for civil rights in 1971.",
+        "correct": "\"Stonewall Nation\"",
+        "answerA": "\"Stonewall Nation\"",
+        "answerB": "\"Outta the Closet\"",
+        "answerC": "\"Out and Proud\"",
+        "answerD": "\"Rainbow Pride\"",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- Singer/ songwriter Jackson Browne got arrested protesting nuclear power at what power plant in 1981?",
+        "correct": "Diablo Canyon",
+        "answerA": "Diablo Canyon",
+        "answerB": "Grand Canyon",
+        "answerC": "King's Canyon",
+        "answerD": "Copper Canyon",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- The BBC designated this Bob Marley and the Wailers song as \"Song of the Millennium.\" ",
+        "correct": "\"One Love\"",
+        "answerA": "\"One Love\"",
+        "answerB": "\"Redemption Song\"",
+        "answerC": "\"Get Up Stand Up\"",
+        "answerD": "\"Exodus\" ",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- In the 1961 song \"America\" from the musical West Side Story the boys say \"Life is all right in America\" and the girls reply?",
+        "correct": "\"If you're all white in America\"",
+        "answerA": "\"If you're all white in America\"",
+        "answerB": "\"If you are white in America\"",
+        "answerC": "\"If you act right in America\"",
+        "answerD": "\"If you have might in America\"",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The shock metal band GWAR released their second album America Must be Destroyed in what year?",
+        "correct": "1992",
+        "answerA": "1992",
+        "answerB": "1986",
+        "answerC": "1998",
+        "answerD": "2001",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- This member of the Clash got arrested in 2011 with Greenpeace members for storming the Leiv Eriksson oil rig near Greenland in a speedboat to protest off shore oil drilling.",
+        "correct": "Paul Simonon",
+        "answerA": "Paul Simonon",
+        "answerB": "Mick Jones",
+        "answerC": "Joe Strummer",
+        "answerD": "Keith Levene",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- This Irish singer wrote \"The Foggy Dew\" a 1919 song  about the Easter Rising- a five day armed insurrection against the British in 1916. ",
+        "correct": "Canon O'Neill",
+        "answerA": "Canon O'Neill",
+        "answerB": "Derek Warfield",
+        "answerC": "David Kincaid",
+        "answerD": "The Clancy Brothers And Tommy Makem",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- The civil rights literary legend Maya Angelou teamed up with what famous soul music duo to record the 1996 album Been Found?",
+        "correct": "Ashford and Simpson",
+        "answerA": "Ashford and Simpson",
+        "answerB": "Peaches and Herb",
+        "answerC": "Hall and Oats",
+        "answerD": "Sam and Dave",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The opening performance of this modern ballet piece by composer Igor Stravinsky in 1913 led to a riot.",
+        "correct": "Rite of Spring",
+        "answerA": "Rite of Spring",
+        "answerB": "The Death of Summer",
+        "answerC": "The Shovel",
+        "answerD": "My Dada Night Dream",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- Denise Ho, a Canto- pop singer, was arrested by Chinese authorities in 2014 protesting what?",
+        "correct": "The use of tear gas on protesters opposing its policies in Hong Kong",
+        "answerA": "The use of tear gas on protesters opposing its policies in Hong Kong",
+        "answerB": "The use of live rounds on workers protesting its labor policies.",
+        "answerC": "The invasion of Zambia by the military Chinese in 2009",
+        "answerD": "The bombing of a Peruvian airliner by the Chinese air force in 2011",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- The song \"La Marseillaise,\" the main anthem of the French Revolution created by Claude Joseph Rouget de Lisle was banned by which king and dictator?",
+        "correct": "Louis the XVIII and Napoleon the III",
+        "answerA": "Louis the XVIII and Napoleon the III",
+        "answerB": "King James the VIII and Julius Caesar",
+        "answerC": "King Louis the LXV and Napoleon the III",
+        "answerD": "Louis the XIV and Napoleon Bonaparte",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- What was the first recorded account of a musician destroying his instrument on stage?",
+        "correct": "Rockin' Rocky Rockwell in 1956",
+        "answerA": "Rockin' Rocky Rockwell in 1957",
+        "answerB": "Kurt Cobain of Nirvana in 1991",
+        "answerC": "Pete Townsend of the Who in 1966",
+        "answerD": "Keith Moon of the Who in 1966",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The song \"Revolution\" by the British shoegaze band Spacemen 3 was released in what year?",
+        "correct": "1988",
+        "answerA": "1988",
+        "answerB": "1991",
+        "answerC": "2003",
+        "answerD": "1979",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- These two Tibetan musicians started serving four year sentences in 2012 after releasing the album The Pain of an Unhealed Wound- a protest album around the Chinese occupation.",
+        "correct": "Pema Trinley and Chakdor",
+        "answerA": "Pema Trinley and Chakdor",
+        "answerB": "Yungchen Lhamo and Karjam Saeji",
+        "answerC": "Danny Becher and Techung",
+        "answerD": "Choying Drolma & Steve Tibbetts",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION ROUND- \"Hasta Siempre,Commandante\" (\"Until Forever, Commander\") is a 1965 song based on Che Guevara's farewell address in Cuba before he went to the Congo and Bolivia to join the revolutionary efforts in those counties. Who wrote the song?",
+        "correct": "Cuban singer Carlos Puebla",
+        "answerA": "Cuban singer Carlos Puebla",
+        "answerB": "Cuban singer Benny Moré",
+        "answerC": "Cuban singer Raúl Planas",
+        "answerD": "Chilean composer Sergio Ortega",
+        "round": "revRound"
+    },
+    {
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "round": ""
+    },
+    {
+        "question": "RAD ROUND- What's the name of Gil Scott Heron's famous spoken word performance piece about Watergate released in 1974?",
+        "correct": "H2O Gate Blues",
+        "answerA": "H2O Gate Blues",
+        "answerB": "Saturday Night Massacre",
+        "answerC": "The Ag-new Blues",
+        "answerD": "The Four Asses of the Apocalypse",
+        "round": "radRound"
+    },
+    {
+        "question": "REBELLION ROUND- The arrest of members of this hip-hop act in 1989 for performing an anti-police song during a show in Detroit led to a concert riot.",
+        "correct": "NWA",
+        "answerA": "NWA",
+        "answerB": "A Tribe Called Quest",
+        "answerC": "Public Enemy",
+        "answerD": "Run DMC",
+        "round": "rebelRound"
+    },
+    {
+        "question": "RESISTANCE ROUND- This British born rapper was arrested and deported by ICE officials while in Atlanta in 2019. He later donated 25,000 to the Southern Poverty Law Center to fight against ICE abuses.",
+        "correct": "21 Savage",
+        "answerA": "22 Savage",
+        "answerB": "J. Cole",
+        "answerC": "Sole",
+        "answerD": "Lil' Wayne",
+        "round": "resRound"
+    },
+    {
+        "question": "REVOLUTION  ROUND- Who wrote the 1871 socialist anthem the \"International.\" ",
+        "correct": "Anarchist, Eugene Pottier",
+        "answerA": "Anarchist, Eugene Pottier",
+        "answerB": "Communist, Karl Marx",
+        "answerC": "Social Democrat, Kurt Weill",
+        "answerD": "John Reed, Socialist",
+        "round": "revRound"
+    }
+]

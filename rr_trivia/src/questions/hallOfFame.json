@@ -1,0 +1,342 @@
+[
+    {
+        "field1": "Question 1",
+        "question": "In the human rights anthem \"Get up, Stand up\" Bob Marley is joined by who on lead vocals?",
+        "correct": "Peter Tosh",
+        "answerA": "Peter Tosh",
+        "answerB": "Joe Higgs",
+        "answerC": "Jimmy Cliff",
+        "answerD": "Desmond Dekker",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 2",
+        "question": "Green Day recorded a cover of this John Lennon song in 2007 for an Amnesty International benefit for Darfur.",
+        "correct": "\"Working Class Hero\"",
+        "answerA": "\"Working Class Hero\"",
+        "answerB": "\"Imagine\"",
+        "answerC": "\"Give Peace a Chance\"",
+        "answerD": "\"Cold Turkey\"",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 3",
+        "question": "What was the Bruce Springsteen song \"Born in the USA\" about?",
+        "correct": "The struggles of working class, Vietnam War veterans returning back the US",
+        "answerA": "The struggles of working class, Vietnam War veterans returning back the US",
+        "answerB": "Supporting a strong military",
+        "answerC": "Being proud to be an American",
+        "answerD": "Supporting Ronald Reagan",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 4",
+        "question": "From which Bob Dylan song did the radical 1970's leftist group The Weathermen take their name?",
+        "correct": "\"Subterranean Homesick Blues\"",
+        "answerA": "\"Subterranean Homesick Blues\"",
+        "answerB": "\"Everybody Must Get Stoned\"",
+        "answerC": "\"Tears in Heaven\"",
+        "answerD": "\"Like a Rolling Stone\"",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 5*",
+        "question": "What's the first line in Patti Smith's classic remake of the song \"Gloria\" in 1975?",
+        "correct": "\"Jesus died for somebody's sins but not mine\"",
+        "answerA": "\"Jesus died for somebody's sins but not mine\"",
+        "answerB": "\"Like to tell you about my baby\"",
+        "answerC": "\"Gloria, your always on the run now\"",
+        "answerD": "\"Gloria you're the one for me\"",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 6*",
+        "question": "Rolling Stone magazine voted this Clash record the best studio album  of the 1980's.",
+        "correct": "London Calling",
+        "answerA": "London Calling",
+        "answerB": "The Clash",
+        "answerC": "Cut the Crap",
+        "answerD": "Combat Rock",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 7*",
+        "question": "The protest song \"Mississippi Goddamn\" was written by Nina Simone in response to what two incidents? ",
+        "correct": "The assassination of NAACP leader Medgar Evers, and the bombing of the 16th Street Baptist Church in Birmingham, Alabama, which killed four black girls.",
+        "answerA": "The assassination of NAACP leader Medgar Evers, and the bombing of the 16th Street Baptist Church in Birmingham, Alabama, which killed four black girls.",
+        "answerB": "The US invasion of Cambodia, and the assassination of MLK",
+        "answerC": "The killing of Malcolm X and JFK",
+        "answerD": "The Jackson State Killings of two students by the Mississippi State Police and the US bombing of Laos",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 8*",
+        "question": "What album did the song Pride (in the name of love) a tribute to Martin Luther King Jr. by U2 appear on?",
+        "correct": "Unforgettable Fire",
+        "answerA": "Unforgettable Fire",
+        "answerB": "Boy",
+        "answerC": "October",
+        "answerD": "Rattle and Hum",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 9*",
+        "question": "Did Joan Biaz perform at the historic Civil Rights March on Washington in August of 1963?",
+        "correct": "Yes",
+        "answerA": "Yes",
+        "answerB": "No",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 10*",
+        "question": "The hip-hop group Public Enemy released their influential, landmark album It Takes a Nation of Millions to Hold Us Back in what year?",
+        "correct": "1988",
+        "answerA": "1988",
+        "answerB": "1990",
+        "answerC": "1993",
+        "answerD": "1986",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 11*",
+        "question": "1997 this band won a Grammy for best metal performance.",
+        "correct": "Rage Against the Machine",
+        "answerA": "Rage Against the Machine",
+        "answerB": "System of a Down",
+        "answerC": "Metallica",
+        "answerD": "Jethro Tull",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 12*",
+        "question": "In what year was Yoko Ono born?",
+        "correct": "1933",
+        "answerA": "1933",
+        "answerB": "1945",
+        "answerC": "1923",
+        "answerD": "1959",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 13*",
+        "question": "The 1979 song \"At Home He's a Tourist\" by the post punk group Gang of Four was banned by which network?",
+        "correct": "BBC",
+        "answerA": "BBC",
+        "answerB": "ABC",
+        "answerC": "NBC",
+        "answerD": "CBS",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 14*",
+        "question": "What term best describes Sinead O'Conner's Political views",
+        "correct": "Pacifist",
+        "answerA": "Pacifist",
+        "answerB": "Anarchist",
+        "answerC": "Nationalist",
+        "answerD": "Republican",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 15*",
+        "question": "The Dead Kennedys' punk classic \"Holiday in Cambodia\" a song that mocked liberal yuppie hypocrisy, came out in what year?",
+        "correct": "1979",
+        "answerA": "1980",
+        "answerB": "1973",
+        "answerC": "1983",
+        "answerD": "1979",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 16*",
+        "question": "Who said this? \"Religion is finely designed to divide and separate; spirituality brings unity and forgiveness and compassion.\" ",
+        "correct": "Carlos Santana",
+        "answerA": "Carlos Santana",
+        "answerB": "Ram Dass",
+        "answerC": "Dalai Lama",
+        "answerD": "Ravi Shankar",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 17*",
+        "question": "What was the first single released by the Sex Pistols in November of 1976?",
+        "correct": "\"Anarchy in the UK\"",
+        "answerA": "\"Anarchy in the UK\"",
+        "answerB": "\"God Save the Queen\"",
+        "answerC": "\"Bodies\"",
+        "answerD": "\"Pretty Vacant\"",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 18*",
+        "question": "Which female hip-hop artist founded The Refugee Project in 1996 -a charity organization for at risk youth?",
+        "correct": "Lauryn Hill",
+        "answerA": "Lauryn Hill",
+        "answerB": "Lil' Kim",
+        "answerC": "Foxy Brown",
+        "answerD": "Monie Love",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 19*",
+        "question": "At the beginning of the Bikini Kill song \"Double Dare Ya\" what does lead singer Kathleen Hanna call for? ",
+        "correct": "\"Revolution!\"",
+        "answerA": "\"Revolution!\"",
+        "answerB": "\"Peace\"",
+        "answerC": "\"Love\"",
+        "answerD": "\"Resistance!\"",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 20*",
+        "question": "What incident inspired the Crosby, Stills, Nash & Young song \"Ohio\"?",
+        "correct": "The shooting of four anti-war student protesters by National Guard troops at Kent State in 1970.",
+        "answerA": "The shooting of four anti-war student protesters by National Guard troops at Kent State in 1970.",
+        "answerB": "The shooting of John Lennon",
+        "answerC": "A student riot in Youngstown in 1970",
+        "answerD": "The death of Mary Rose Oakar",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 21*",
+        "question": "The song \"Smalltown Boy,\" from the 1980's UK synth-pop band, Bronski Beat, was about what?",
+        "correct": "A young man leaving his hometown because he's gay",
+        "answerA": "A young man leaving his hometown because he's gay",
+        "answerB": "A boy being forced into a mental institution because he's gay",
+        "answerC": "A black man being chased out of his hometown because he dated a white girl",
+        "answerD": "A boy being thrown out of his house for being gay",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 22*",
+        "question": "The Song \"Let There be Peace\" was released in 2013 on what Sweet Honey and the Rock record?",
+        "correct": "A Tribute - Live! Jazz at Lincoln Center",
+        "answerA": "Live from Carnegie Hall",
+        "answerB": "Live Jazz from the Kennedy Center!",
+        "answerC": "A Tribute - Live! Jazz at Lincoln Center",
+        "answerD": "Live from the 9:30 Club!",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 23*",
+        "question": "This deep throated, U.S. based baritone was investigated and blacklisted during the late 1940's and 1950's for supporting civil rights and pro-Soviet policies.",
+        "correct": "Paul Robeson",
+        "answerA": "Paul Robeson",
+        "answerB": "Harry Belafonte",
+        "answerC": "Louis Armstrong",
+        "answerD": "Ossie Davis",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 24*",
+        "question": "The 1944 Woody Guthrie song \"This Land is Your Land\" was written in reaction to what nationalist song?",
+        "correct": "\"God Bless America\"  ",
+        "answerA": "\"God Bless America\"  ",
+        "answerB": "\"the Star Spangled Banner\"",
+        "answerC": "\"America the Beautiful\"",
+        "answerD": "\"God Bless the USA\"",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Question 25*",
+        "question": "In the 1976 song \"Rat Race\" off the album Rastaman Vibration, Bob Marley sings that \"Rasta don't work for no\" Who?",
+        "correct": "CIA",
+        "answerA": "FBI",
+        "answerB": "UN",
+        "answerC": "ICE",
+        "answerD": "CIA",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Instructions: Use the cells above in COLUMNS B-G to enter your game data. It's ok to leave fields blank.",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "You can make the columns wider to make room to see your data,  but DO NOT REMOVE OR ADD any columns, rows, or cells or else the data will load incorrectly into your game.",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "Then save this file (In CSV format) and upload it to your game at TriviaMaker.com",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "The \"correct\" answer should be entered into column C. This can be changed in the app once all the data is imported.",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "*Questions 5-25 will only upload if you have a Premium account.",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    },
+    {
+        "field1": "If you have a free account, simply leave these fields blank.",
+        "question": "",
+        "correct": "",
+        "answerA": "",
+        "answerB": "",
+        "answerC": "",
+        "answerD": "",
+        "Further Expl.": ""
+    }
+]

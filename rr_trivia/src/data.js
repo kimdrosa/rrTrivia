@@ -1,29 +1,89 @@
 const csv = require('csvtojson');
 const fs = require('fs');
-let results;
 
-// fs.createReadStream('questions.csv')
-//   .pipe(csv())
-//   .on('data', (data) => results.push(data))
-//   .on('end', () => {
-//     // console.log(results);
-//   });
 
 csv()
-.fromFile('questions.csv')
+.fromFile('questions/questions.csv')
 .then((questions) => {
-  fs.writeFile('questions.json', JSON.stringify(questions, null, 4), (err) => {
+  fs.writeFile('questions/questions.json', JSON.stringify(questions, null, 4), (err) => {
     if (err) {
         throw err;
     }
-    console.log(JSON.stringify(questions, null, 4), "JSON array is saved.");
+    console.log( "questions array is saved.");
   });
   
 }) . catch((err) => {
   console.log(err)
 })
-// Write JSON array to a file
+
+csv()
+.fromFile('questions/hallOfFame.csv')
+.then((questions) => {
+  fs.writeFile('questions/hallOfFame.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("hallOfFame array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
+
+csv()
+.fromFile('questions/rebelRappers.csv')
+.then((questions) => {
+  fs.writeFile('questions/rebelRappers.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("rebelRappers array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
+
+csv()
+.fromFile('questions/levelTwo.csv')
+.then((questions) => {
+  fs.writeFile('questions/levelTwo.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("levelTwo array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
+
+csv()
+.fromFile('questions/rrMix.csv')
+.then((questions) => {
+  fs.writeFile('questions/rrMix.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("rrMix array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
+
+csv()
+.fromFile('questions/shutUpAndSing.csv')
+.then((questions) => {
+  fs.writeFile('questions/shutUpAndSing.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("shutUpAndSing array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
 
 
-// export default results;
-module.exports =  { results };

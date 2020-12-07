@@ -9,7 +9,9 @@ import Paper from './styles/Paper.js';
 import Score from './styles/Score.js';
 import Count from './styles/Count.js';
 import Button from './styles/Button.js';
-import App from './App.js';
+import Time from './styles/Time.js';
+import Timer from 'react-compound-timer';
+import App from './App.js'
 
 
 
@@ -18,13 +20,17 @@ class QuizPage extends React.Component {
     constructor(props) {
         super(props);
         this.isCorrect = this.isCorrect.bind(this);
+        this.advanceRound = this.advanceRound.bind(this);
+        this.getQuestionsForRound = this.getQuestionsForRound.bind(this);
         this.state = {
             questions: [],
             currentQuestion: 0,
             correct: null,
             score : 0,
             numCorrect: 0,
-            numQuestions: 0
+            numQuestions: 0,
+            isTimeUp: false,
+            round: 'basic'
         };
     }
 
@@ -45,24 +51,42 @@ class QuizPage extends React.Component {
      
       console.log(this.state.questions)
 
-      
-      // let questionKeys = this.props.data;
-      // let qs = [];
-      // for(var i = 0; i < questionKeys.length; i++) {
-      //   let randIndx = Math.floor(Math.random(questionKeys.length));
-      //   let newVal = questionKeys[randIndx];
-      //   questionKeys[randIndx] = questionKeys[i];
-      //   questionKeys[i] = newVal;
-      //   }
-  
-      // for(var j = 0; j < questionKeys.length; j++) {
-      //   qs.push(this.props.data[questionKeys[j]]);
-      // }
-      // this.setState({
-      //   questions: qs
-      // })
     }
 
+
+    advanceRound () {
+      if(this.state.state === 'basic') {
+        this.setState({
+          round: 'radRound',
+          questions : this.getQuestionsForRound()
+        })
+      } else if(this.state.state === 'radRound') {
+        this.setState({
+          round: 'rebelRound',
+          questions : this.getQuestionsForRound()
+        }) 
+      } else if(this.state.state === 'rebelRound') {
+          this.setState({
+            round: 'resRound',
+            questions : this.getQuestionsForRound()
+          })
+      } else if(this.state.state === 'resRound') {
+        this.setState({
+          round: 'revRound',
+          questions : this.getQuestionsForRound()
+        })
+      }
+    }
+
+    getQuestionsForRound () {
+      let results = []
+      for(var i = 0; i < this.props.advanced.length; i++) {
+        if(this.props.advanced[i].round === this.state.round) {
+          results.push(this.props.advanced);
+          return results;
+        }
+      }
+    }
 
     //checks if clicked answer is the correct answer
     isCorrect (q, ans){ 
@@ -115,24 +139,49 @@ class QuizPage extends React.Component {
       let currentQuestion = questions[currentQuestionIndex];
       //get Answer A, Answer B, Answer C and Answer D
       
-    if(currentQuestionIndex === questions.length){
+    if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score < 100){
       return(
         <Paper>
           <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
           <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
-          <Button>Play Again?</Button>
+          <Button >Play Again?</Button>
         </Paper>
       )
+      
 
-    } else if(questions.length > 0) {
+    }  
+     else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 100){
+      return(
+        <Paper>
+          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
+          <h2 style={{color:'white'}}> Your final score was {this.state.score}! You did well enough to go to the next round</h2>
+          <Button onClick= {this.advanceRound()} > Continue to next Round</Button>
+        </Paper>
+      ) }
+      else if(questions.length > 0) {
         if(!currentQuestion.answers){
       getAnswers();
         }
       console.log(currentQuestion.answerA);
     return(
     <div>
-    <Count>{this.state.numQuestions}/{this.state.questions.length}
-    <Score>Score: {this.state.score}</Score></Count>
+      <div style={{display:'inline'}}>
+        <Count>{this.state.numQuestions}/{this.state.questions.length}
+        <Score>Score: {this.state.score}</Score></Count>
+        <Time>
+        <Timer   initialTime={15000}
+          direction="backward"
+          checkpoints={[
+            {time: 0,
+            callback: () => {this.setState({isTimeUp: true})}}
+          ]}>
+        <Timer.Minutes /> 
+      :
+        <Timer.Seconds />
+        </Timer>
+        </Time>
+      </div>
+
     <QuestionPaper>
       <QuestionAndAnswers>
        <Question>{currentQuestion.question}</Question>
