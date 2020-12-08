@@ -59,55 +59,80 @@ class QuizPage extends React.Component {
     advanceRound () {
  
       if(this.state.round === 'basic') {
+    
         this.setState({
           round: 'radRound',
-          questions : this.getQuestionsForRound(),
+          questions: [],
           currentQuestion : 0,
           isTimeUp: false,
-          time : 15000
+          time : 15000,
+          correct : null
         })
+      
       } else if(this.state.round === 'radRound') {
         this.setState({
           round: 'rebelRound',
-          questions : this.getQuestionsForRound(),
+          questions : [],
           currentQuestion : 0,
           isTimeUp: false,
-          time : 15000
+          time : 15000,
+          correct : null
         }) 
+        this.getQuestionsForRound()
       } else if(this.state.round === 'rebelRound') {
           this.setState({
             round: 'resRound',
-            questions : this.getQuestionsForRound(),
+            questions : [],
             currentQuestion : 0,
             isTimeUp: false,
-            time : 15000
+            time : 15000,
+            correct : null
           })
       } else if(this.state.round === 'resRound') {
         this.setState({
           round: 'revRound',
-          questions : this.getQuestionsForRound(),
+          questions : [],
           currentQuestion : 0,
           isTimeUp: false,
-          time : 15000
+          time : 15000,
+          correct : null
         })
       }
     }
 
     getQuestionsForRound () {
-      let results = []
-      for(var i = 0; i < this.props.advanced.length; i++) {
-        if(this.props.advanced[i].round === this.state.round) {
-          results.push(this.props.advanced[i]);
-          
+      let results = [];
+      let advanced = this.props.advanced;
+      console.log(advanced)
+        for(var j = 0; j < advanced.length; j++) {
+          // console.log('advanced[j]', advanced[j])
+           console.log(advanced[j].round, this.state.round)
+          if(advanced[j].round === this.state.round) {
+            results.push(advanced[j]);
+            
+          }
         }
-      }
-      return results;
+   
+        for(var i = 0; i < results.length; i++) {
+          let randIndex = Math.floor(Math.random() * results.length);
+          let temp = results[i];
+          results[i] = results[randIndex];
+          results[randIndex] = temp;
+        }
+       
+        console.log(this.state.round)
+      this.setState({
+        questions : results
+      })
+      console.log('hello from getQuestionsForRound', results)
     }
 
     //checks if clicked answer is the correct answer
     isCorrect (q, ans){ 
+      //NORMAL ROUND
+      if(this.state.round === 'basic') {
         if(q === ans) {
-            this.setState({correct: true, answered:true});
+            this.setState({correct: true});
          
             setTimeout(()=>{
               this.setState({
@@ -127,6 +152,15 @@ class QuizPage extends React.Component {
                 numQuestions: this.state.numQuestions + 1}
                 )},2000)
         }
+       //ADVANCED ROUND
+      } else {
+        if(q === ans) {
+          this.setState({correct: true});
+      } else {
+          this.setState({correct: false});
+      }
+
+      }
     }
         
     
@@ -134,6 +168,11 @@ class QuizPage extends React.Component {
     //returns: number of questions out of total, the score, the time remaining 
     //and the question with four answers
     render () {
+    
+
+
+    //NORMAL ROUND
+    if(this.state.round === 'basic') {
       function getAnswers() {
         let answers = [];
         answers.push(currentQuestion.answerA);
@@ -153,7 +192,6 @@ class QuizPage extends React.Component {
       let questions = this.state.questions;
       let currentQuestionIndex = this.state.currentQuestion;
       let currentQuestion = questions[currentQuestionIndex];
-      //get Answer A, Answer B, Answer C and Answer D
       
     if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score < 100){
       return(
@@ -169,13 +207,15 @@ class QuizPage extends React.Component {
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 100){
       return(
         <Paper>
-          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
-          <h2 style={{color:'white'}}> Your final score was {this.state.score}! You did well enough to go to the next round</h2>
-          <Button onClick= {() => {this.advanceRound()}} > Continue to next Round</Button>
+          <h1 style={{color:'white', fontSize:'50px'}}>Rock On!</h1>
+          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct</h2>
+          <h2 style={{color:'white'}}> Your final score was {this.state.score}, which means that you did well enough to go to the next round</h2>
+          <Button onClick= {()=>{this.advanceRound()}} > Continue to next Round</Button>
         </Paper>
       ) }
       else if(questions.length > 0) {
         if(!currentQuestion.answers){
+
       getAnswers();
         }
       console.log(currentQuestion.answerA);
@@ -230,7 +270,114 @@ class QuizPage extends React.Component {
       } else {
         return <p> Please Wait ...</p>
       }
+
+
+
+    //ADVANCED ROUND
+    } else {
+      function getAnswers() {
+        let answers = [];
+        answers.push(currentQuestion.answerA);
+        answers.push(currentQuestion.answerB);
+        answers.push(currentQuestion.answerC);
+        answers.push(currentQuestion.answerD);
+        for(var i = 0; i < answers.length; i++) {
+          let randIndex = Math.floor(Math.random() * answers.length);
+          let temp = answers[i];
+          answers[i] = answers[randIndex];
+          answers[randIndex] = temp;
+  
+  
+        }
+        currentQuestion.answers = answers;
+      }
+
+
+      let questions = this.state.questions;
+      let currentQuestionIndex = this.state.currentQuestion;
+      let currentQuestion = questions[currentQuestionIndex];
+      
+      console.log('hello from render', this.state)
+      if(this.state.correct === false || (this.state.isTimeUp && this.state.correct === null)) {
+        return(
+          <Paper>
+            <h2 style={{color:'white'}}> Wrong Answer :(</h2>
+            <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
+            <Button >Play Again?</Button>
+          </Paper>
+        )
+    
+      }  
+       else if(this.state.correct === true){
+        return(
+          <Paper>
+            <h1 style={{color:'white', fontSize:'50px'}}>Rock On!</h1>
+            <h2 style={{color:'white'}}> You answered right!</h2>
+            <h2 style={{color:'white'}}> Your score is {this.state.score}</h2>
+            <Button onClick= {()=>{this.advanceRound()}} > Continue to next Round</Button>
+          </Paper>
+        ) }
+        else if(questions.length > 0) {
+          if(!currentQuestion.answers){
+  
+        getAnswers();
+          }
+        console.log(currentQuestion.answerA);
+      return(
+      <div>
+        <div style={{display:'inline'}}>
+          <Count>{this.state.numQuestions}/{this.state.questions.length}
+          <Score>Score: {this.state.score}</Score></Count>
+          <Time>
+          <Timer   initialTime={this.state.time}
+            direction="backward"
+  
+            checkpoints={[
+              {time: 0,
+              callback: () => {this.setState({isTimeUp: true})}}
+            ]}>
+          <Timer.Minutes /> 
+        :
+          <Timer.Seconds />
+          </Timer>
+          </Time>
+        </div>
+  
+      <QuestionPaper>
+        <QuestionAndAnswers>
+         <Question>{currentQuestion.question}</Question>
+         <Answers>
+         {currentQuestion.answers.map((answer) => {
+             if(this.state.correct === null) {
+           return <Answer key={Math.random()} onClick={()=>{this.isCorrect(currentQuestion.correct, answer)}}>{answer}</Answer>
+             } else if(this.state.correct === true)  {
+                 if(answer === currentQuestion.correct) {
+                 return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                 } else {
+                     return <Answer style={{backgroundColor:'#b3b5b4', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                 }
+             }  else if(this.state.correct === false)  {
+              if(answer === currentQuestion.correct) {
+                  return <Answer style={{backgroundColor:'#07b822', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                  } else {
+              return <Answer style={{backgroundColor:'#fc8f8d', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                  }
+          }
+         })}
+         </Answers>
+         </QuestionAndAnswers>
+         </QuestionPaper>
+      
+         </div>
+  
+      )
+        } else {
+          this.getQuestionsForRound()
+          return <p> Please Wait ...</p>
+        }
+
     }
+  }
 }
 
 export default QuizPage;
