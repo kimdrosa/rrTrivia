@@ -51,7 +51,7 @@ class QuizPage extends React.Component {
         questions : questions
       })
      
-      console.log(this.state.questions)
+    
 
     }
 
@@ -78,7 +78,7 @@ class QuizPage extends React.Component {
           time : 15000,
           correct : null
         }) 
-        this.getQuestionsForRound()
+
       } else if(this.state.round === 'rebelRound') {
           this.setState({
             round: 'resRound',
@@ -103,10 +103,8 @@ class QuizPage extends React.Component {
     getQuestionsForRound () {
       let results = [];
       let advanced = this.props.advanced;
-      console.log(advanced)
         for(var j = 0; j < advanced.length; j++) {
-          // console.log('advanced[j]', advanced[j])
-           console.log(advanced[j].round, this.state.round)
+       
           if(advanced[j].round === this.state.round) {
             results.push(advanced[j]);
             
@@ -120,11 +118,11 @@ class QuizPage extends React.Component {
           results[randIndex] = temp;
         }
        
-        console.log(this.state.round)
+      
       this.setState({
         questions : results
       })
-      console.log('hello from getQuestionsForRound', results)
+    
     }
 
     //checks if clicked answer is the correct answer
@@ -308,6 +306,15 @@ class QuizPage extends React.Component {
         )
     
       }  
+      else if(this.state.correct === true && this.state.round === 'revRound'){
+        return(
+          <Paper>
+            <h1 style={{color:'white', fontSize:'50px'}}>Rock On!</h1>
+            <h2 style={{color:'white'}}> You answered all of the advanced questions correctly!</h2>
+            <h2 style={{color:'white'}}> Your final score is {this.state.score}</h2>
+      
+          </Paper>
+        ) }
        else if(this.state.correct === true){
         return(
           <Paper>
