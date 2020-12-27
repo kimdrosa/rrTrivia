@@ -1,80 +1,94 @@
 
 import './App.css';
 import React, {useState} from 'react';
-// import results from './data.js';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import firebase from "firebase/app";
+import "firebase/auth";
+import Login from './Login.js';
 import QuizPage from './QuizPage.js';
-import H1 from './styles/H1.js';
-import Paper from './styles/Paper.js';
-import Button from './styles/Button.js';
-import Button2 from './styles/Button2.js';
-import axios from 'axios';
-import questions from './questions/questions.json';
-import rebelRappers from './questions/rebelRappers.json';
-import rrMix from './questions/rrMix.json';
-import advanced from './questions/advanced.json';
-import shutUpAndSing from './questions/shutUpAndSing.json';
-import hallOfFame from './questions/hallOfFame.json'
+import Home from './Home.js';
+import Categories from './Categories.js'
 
 
-// function getQuestions() {
-//   let results;
-//   axios.get('/api/getQuestions')
-//   .then((response) => {
-//     results = response;
-//   })
-//   .catch((error)=> {
-//     console.log(error);
-//   })
-//   return results;
-// }
+
 
 function App() {
-    // let results = getQuestions();
-    
+
+  return (
+    <Router>
+      <Route exact path="/" component={Home}/> 
+      <Route exact path="/login" component={Login}/> 
+      <Route exact path="/quizPage" component={QuizPage}/>
+      <Route
+              exact
+              path="/quizPage/:category"
+              name="quizPage"
+              render={(props) => {
+                console.log(props);
+                const category = props.match.params.category;
+                console.log(category)
+                return (
+                  <div>
+                    <QuizPage data/>
+                  </div>
+                );
+              }}
+            />
+      <Route exact path="/categories" component={Categories}/>  
+    </Router>
+  )
+
  
-  const [enter, setEnter] = useState(false);
-  const [play, setPlay] =  useState(false);
-  const [category, setCategory] = useState(questions);
-  if(enter) {
-    return (
+ 
+  // const [enter, setEnter] = useState(false);
+  // const [play, setPlay] =  useState(false);
+  // const [category, setCategory] = useState(questions);
+  // const [user, setUser] = useState(null);
+ 
+  // fireConfig.auth().onAuthStateChanged((user) => {
+  //   user ? setUser(user) : setUser(null);
+  // })
+
+  // if(enter) {
+  //   return (
      
-      <div className="App">
- 
+  //     <div className="App">
+
    
-          <Paper>
-            <H1>Choose a Category </H1>
-            <div style={{display:"grid", gridGap:"20px", gridTemplateColumns:"1fr 1fr"}}>
-            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(rebelRappers)}}> Rebel Rappers </Button2>
-            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(rrMix)}}> Rebel Rock Mix </Button2>
-            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(hallOfFame)}}> Hall of Fame </Button2>
-            <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(shutUpAndSing)}}> Shut Up And Sing </Button2>
-            </div>
-          </Paper>
+  //         <Paper>
+  //           <H1>Choose a Category </H1>
+  //           <div style={{display:"grid", gridGap:"20px", gridTemplateColumns:"1fr 1fr"}}>
+  //           <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(rebelRappers)}}> Rebel Rappers </Button2>
+  //           <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(rrMix)}}> Rebel Rock Mix </Button2>
+  //           <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(hallOfFame)}}> Hall of Fame </Button2>
+  //           <Button2 onClick={() => {setPlay(true); setEnter(false); setCategory(shutUpAndSing)}}> Shut Up And Sing </Button2>
+  //           </div>
+  //         </Paper>
          
        
       
-      </div>
+  //     </div>
      
-    );
+  //   );
    
-  } else if(play){
-    return (
-      <QuizPage data={category} advanced={advanced}> </QuizPage>)
-  }else {
-    return (
-      <div className="App">
+  // } else if(play){
+  //   return (
+  //     <QuizPage data={category} advanced={advanced}> </QuizPage>)
+  // }else {
+  //   return (
+  //     <div className="App">
         
-        <Paper>
-        <H1>Rebel Rock Trivia</H1>
-        <h3 style={{color:'white'}}> The trivia game where politics and music collide</h3> 
-        <Button onClick={() => {setEnter(true)}}>Enter</Button>
-        </Paper>
+  //       <Paper>
+  //       <H1>Rebel Rock Trivia</H1>
+  //       <h3 style={{color:'white'}}> The trivia game where politics and music collide</h3> 
+  //       <Button onClick={() => {setEnter(true)}}>Enter</Button>
+  //       </Paper>
 
         
-    </div>
-    )
+  //   </div>
+  //   )
   
-  }
+  // }
 }
 
 export default App;

@@ -2,6 +2,7 @@ const csv = require('csvtojson');
 const fs = require('fs');
 
 
+
 csv()
 .fromFile('questions/questions.csv')
 .then((questions) => {
@@ -45,9 +46,9 @@ csv()
 })
 
 csv()
-.fromFile('questions/levelTwo.csv')
+.fromFile('questions/advanced.csv')
 .then((questions) => {
-  fs.writeFile('questions/levelTwo.json', JSON.stringify(questions, null, 4), (err) => {
+  fs.writeFile('questions/advanced.json', JSON.stringify(questions, null, 4), (err) => {
     if (err) {
         throw err;
     }

@@ -11,7 +11,7 @@ import Count from './styles/Count.js';
 import Button from './styles/Button.js';
 import Time from './styles/Time.js';
 import Timer from 'react-compound-timer';
-import App from './App.js'
+
 
 
 
@@ -31,7 +31,7 @@ class QuizPage extends React.Component {
             numQuestions: 0,
             isTimeUp: false,
             round: 'basic',
-            time: 15000
+            time: 13000
            
         };
     }
@@ -65,7 +65,6 @@ class QuizPage extends React.Component {
           questions: [],
           currentQuestion : 0,
           isTimeUp: false,
-          time : 15000,
           correct : null
         })
       
@@ -75,7 +74,6 @@ class QuizPage extends React.Component {
           questions : [],
           currentQuestion : 0,
           isTimeUp: false,
-          time : 15000,
           correct : null
         }) 
 
@@ -85,7 +83,6 @@ class QuizPage extends React.Component {
             questions : [],
             currentQuestion : 0,
             isTimeUp: false,
-            time : 15000,
             correct : null
           })
       } else if(this.state.round === 'resRound') {
@@ -94,7 +91,6 @@ class QuizPage extends React.Component {
           questions : [],
           currentQuestion : 0,
           isTimeUp: false,
-          time : 15000,
           correct : null
         })
       }
@@ -203,19 +199,20 @@ class QuizPage extends React.Component {
 
     }  
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 100){
+        setTimeout(() => {
+          this.advanceRound()
+        }, 5000)
       return(
-        <Paper>
-          <h1 style={{color:'white', fontSize:'50px'}}>Rock On!</h1>
-          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct</h2>
-          <h2 style={{color:'white'}}> Your final score was {this.state.score}, which means that you did well enough to go to the next round</h2>
-          <Button onClick= {()=>{this.advanceRound()}} > Continue to next Round</Button>
-        </Paper>
-      ) }
-      else if(questions.length > 0) {
-        if(!currentQuestion.answers){
+          <Paper>
+            <h1 style={{color:'white', fontSize:'50px'}}>Excellent!</h1>
+            <h2 style={{color:'white'}}> Your final score was {this.state.score}, Welcome to Sudden Death!!</h2>
 
-      getAnswers();
-        }
+          </Paper>
+        ) 
+      } else if(questions.length > 0) {
+          if(!currentQuestion.answers){
+            getAnswers();
+          }
       console.log(currentQuestion.answerA);
     return(
     <div>
@@ -295,8 +292,8 @@ class QuizPage extends React.Component {
       let currentQuestionIndex = this.state.currentQuestion;
       let currentQuestion = questions[currentQuestionIndex];
       
-      console.log('hello from render', this.state)
-      if(this.state.correct === false || (this.state.isTimeUp && this.state.correct === null)) {
+      console.log('hello from render', this.state.round)
+      if(this.state.correct === false) {
         return(
           <Paper>
             <h2 style={{color:'white'}}> Wrong Answer :(</h2>
@@ -316,18 +313,20 @@ class QuizPage extends React.Component {
           </Paper>
         ) }
        else if(this.state.correct === true){
+        setTimeout(() => {
+          this.advanceRound()
+        }, 5000)
         return(
           <Paper>
             <h1 style={{color:'white', fontSize:'50px'}}>Rock On!</h1>
             <h2 style={{color:'white'}}> You answered right!</h2>
             <h2 style={{color:'white'}}> Your score is {this.state.score}</h2>
-            <Button onClick= {()=>{this.advanceRound()}} > Continue to next Round</Button>
+            
           </Paper>
         ) }
         else if(questions.length > 0) {
           if(!currentQuestion.answers){
-  
-        getAnswers();
+            getAnswers();
           }
         console.log(currentQuestion.answerA);
       return(
@@ -335,44 +334,31 @@ class QuizPage extends React.Component {
         <div style={{display:'inline'}}>
           <Count>{this.state.numQuestions}/{this.state.questions.length}
           <Score>Score: {this.state.score}</Score></Count>
-          <Time>
-          <Timer   initialTime={this.state.time}
-            direction="backward"
-  
-            checkpoints={[
-              {time: 0,
-              callback: () => {this.setState({isTimeUp: true})}}
-            ]}>
-          <Timer.Minutes /> 
-        :
-          <Timer.Seconds />
-          </Timer>
-          </Time>
         </div>
   
       <QuestionPaper>
         <QuestionAndAnswers>
          <Question>{currentQuestion.question}</Question>
-         <Answers>
-         {currentQuestion.answers.map((answer) => {
-             if(this.state.correct === null) {
-           return <Answer key={Math.random()} onClick={()=>{this.isCorrect(currentQuestion.correct, answer)}}>{answer}</Answer>
-             } else if(this.state.correct === true)  {
-                 if(answer === currentQuestion.correct) {
-                 return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
-                 } else {
-                     return <Answer style={{backgroundColor:'#b3b5b4', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
-                 }
-             }  else if(this.state.correct === false)  {
-              if(answer === currentQuestion.correct) {
-                  return <Answer style={{backgroundColor:'#07b822', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
-                  } else {
-              return <Answer style={{backgroundColor:'#fc8f8d', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
-                  }
-          }
-         })}
-         </Answers>
-         </QuestionAndAnswers>
+          <Answers>
+            {currentQuestion.answers.map((answer) => {
+              if(this.state.correct === null) {
+                return <Answer key={Math.random()} onClick={()=>{this.isCorrect(currentQuestion.correct, answer)}}>{answer}</Answer>
+              } else if(this.state.correct === true)  {
+                  if(answer === currentQuestion.correct) {
+                      return <Answer style={{backgroundColor:'green', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                      } else {
+                          return <Answer style={{backgroundColor:'#b3b5b4', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                      }
+                  }  else if(this.state.correct === false)  {
+                    if(answer === currentQuestion.correct) {
+                        return <Answer style={{backgroundColor:'#07b822', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                        } else {
+                    return <Answer style={{backgroundColor:'#fc8f8d', border:'none', color:'white'}} key={Math.random()} >{answer}</Answer>
+                        }
+                }
+              })}
+            </Answers>
+          </QuestionAndAnswers>
          </QuestionPaper>
       
          </div>
