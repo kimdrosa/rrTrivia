@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
 import Question from './styles/Question.js';
 import Answer from './styles/Answer.js';
 import Answers from './styles/Answers.js';
@@ -192,7 +193,9 @@ class QuizPage extends React.Component {
         <Paper>
           <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
           <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
-          <Button >Play Again?</Button>
+          <Link to={'/'}>
+          <Button>Play Again?</Button>
+          </Link>
         </Paper>
       )
       
