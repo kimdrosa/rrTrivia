@@ -6,6 +6,7 @@ import Answer from './styles/Answer.js';
 import Answers from './styles/Answers.js';
 import QuestionPaper from './styles/QuestionPaper.js'
 import QuestionAndAnswers from './styles/QuestionAndAnswers.js';
+import AdvancedQuestion from './styles/AdvancedQuestion.js';
 import Paper from './styles/Paper.js';
 import Score from './styles/Score.js';
 import Count from './styles/Count.js';
@@ -317,9 +318,6 @@ class QuizPage extends React.Component {
           </Paper>
         ) }
        else if(this.state.correct === true){
-        // setTimeout(() => {
-        //   this.advanceRound()
-        // }, 5000)
         setTimeout(this.advanceRound(), 5000)
         return(
           <Paper>
@@ -342,7 +340,7 @@ class QuizPage extends React.Component {
         </div>
   
       <QuestionPaper>
-        <QuestionAndAnswers>
+        <AdvancedQuestion>
          <Question>{currentQuestion.question}</Question>
           <Answers>
             {currentQuestion.answers.map((answer) => {
@@ -363,7 +361,7 @@ class QuizPage extends React.Component {
                 }
               })}
             </Answers>
-          </QuestionAndAnswers>
+            </AdvancedQuestion>
          </QuestionPaper>
       
          </div>
