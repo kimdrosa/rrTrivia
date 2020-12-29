@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Question from './styles/Question.js';
 import Answer from './styles/Answer.js';
 import Answers from './styles/Answers.js';
+import H1 from './styles/H1.js';
 import QuestionPaper from './styles/QuestionPaper.js'
 import QuestionAndAnswers from './styles/QuestionAndAnswers.js';
 import AdvancedQuestion from './styles/AdvancedQuestion.js';
@@ -33,7 +34,8 @@ class QuizPage extends React.Component {
             numQuestions: 0,
             isTimeUp: false,
             round: 'basic',
-            time: 13000
+            roundString: '',
+            time: 240000
            
         };
     }
@@ -66,6 +68,7 @@ class QuizPage extends React.Component {
           round: 'radRound',
           questions: [],
           currentQuestion : 0,
+          roundString: 'Radical Round',
           isTimeUp: false,
           correct : null
         })
@@ -74,6 +77,7 @@ class QuizPage extends React.Component {
         this.setState({
           round: 'rebelRound',
           questions : [],
+          roundString: 'Rebellion Round',
           currentQuestion : 0,
           isTimeUp: false,
           correct : null
@@ -83,6 +87,7 @@ class QuizPage extends React.Component {
           this.setState({
             round: 'resRound',
             questions : [],
+            roundString: 'Resistance Round',
             currentQuestion : 0,
             isTimeUp: false,
             correct : null
@@ -90,6 +95,7 @@ class QuizPage extends React.Component {
       } else if(this.state.round === 'resRound') {
         this.setState({
           round: 'revRound',
+          roundString: 'Revolution Round',
           questions : [],
           currentQuestion : 0,
           isTimeUp: false,
@@ -190,20 +196,40 @@ class QuizPage extends React.Component {
       let currentQuestionIndex = this.state.currentQuestion;
       let currentQuestion = questions[currentQuestionIndex];
       
-    if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score < 100){
+    if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score <= 500){
       return(
         <Paper>
-          <h2 style={{color:'white'}}> You got {this.state.numCorrect} out of {this.state.numQuestions} correct!</h2>
+          <H1>Beginner</H1>
           <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
           <Link to={'/'}>
           <Button>Play Again?</Button>
           </Link>
         </Paper>
       )
-      
-
+    } else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && (this.state.score > 500 && this.state.score <= 1000)){
+      return(
+        <Paper>
+          <H1>Not Bad!</H1>
+          <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
+          <Link to={'/'}>
+          <Button>Play Again?</Button>
+          </Link>
+        </Paper>
+      )
+    }  else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && (this.state.score > 1000 && this.state.score <= 1400)){
+      return(
+        <Paper>
+          <H1>Good!</H1>
+          <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
+          <Link to={'/'}>
+          <Button>Play Again?</Button>
+          </Link>
+        </Paper>
+      )
     }  
-     else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 100){
+    
+
+     else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 1500){
         setTimeout(this.advanceRound(), 5000)
         
 
@@ -211,7 +237,6 @@ class QuizPage extends React.Component {
           <Paper>
             <h1 style={{color:'white', fontSize:'50px'}}>Excellent!</h1>
             <h2 style={{color:'white'}}> Your final score was {this.state.score}, Welcome to Sudden Death!!</h2>
-            {/* <button onClick={this.advanceRound()}>advance</button> */}
           </Paper>
         ) 
       } else if(questions.length > 0) {
@@ -303,7 +328,9 @@ class QuizPage extends React.Component {
           <Paper>
             <h2 style={{color:'white'}}> Wrong Answer :(</h2>
             <h2 style={{color:'white'}}> Your final score was {this.state.score}</h2>
-            <Button >Play Again?</Button>
+            <Link to={'/'}>
+              <Button>Play Again?</Button>
+            </Link>
           </Paper>
         )
     
@@ -339,8 +366,9 @@ class QuizPage extends React.Component {
           <Score>Score: {this.state.score}</Score></Count>
         </div>
   
-      <QuestionPaper>
+     
         <AdvancedQuestion>
+          <H1 style={{color:'purple', fontWeight:'1200'}}>{this.state.roundString}</H1>
          <Question>{currentQuestion.question}</Question>
           <Answers>
             {currentQuestion.answers.map((answer) => {
@@ -362,7 +390,7 @@ class QuizPage extends React.Component {
               })}
             </Answers>
             </AdvancedQuestion>
-         </QuestionPaper>
+      
       
          </div>
   

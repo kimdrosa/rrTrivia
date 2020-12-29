@@ -5,7 +5,7 @@ const Question = styled.div`
     text-align: center;
    
     /* border-radius: 5px; */
-    padding: 10px;
+    /* padding: 10px; */
     font-size: 25px;
     font-weight: 500;
   

@@ -6,7 +6,7 @@ font-family: 'Ariel', sans-serif;
 font-weight: 900;
 font-size: 50px;
 color: white;
-
+text-align: center;
 `
 
 export default H1;
