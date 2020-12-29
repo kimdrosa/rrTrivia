@@ -57,7 +57,7 @@ class QuizPage extends React.Component {
     }
 
 
-    advanceRound () {
+    advanceRound() {
  
       if(this.state.round === 'basic') {
     
@@ -124,6 +124,7 @@ class QuizPage extends React.Component {
 
     //checks if clicked answer is the correct answer
     isCorrect (q, ans){ 
+      console.log(ans);
       //NORMAL ROUND
       if(this.state.round === 'basic') {
         if(q === ans) {
@@ -202,14 +203,14 @@ class QuizPage extends React.Component {
 
     }  
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 100){
-        setTimeout(() => {
-          this.advanceRound()
-        }, 5000)
+        setTimeout(this.advanceRound(), 5000)
+        
+
       return(
           <Paper>
             <h1 style={{color:'white', fontSize:'50px'}}>Excellent!</h1>
             <h2 style={{color:'white'}}> Your final score was {this.state.score}, Welcome to Sudden Death!!</h2>
-
+            {/* <button onClick={this.advanceRound()}>advance</button> */}
           </Paper>
         ) 
       } else if(questions.length > 0) {
@@ -316,9 +317,10 @@ class QuizPage extends React.Component {
           </Paper>
         ) }
        else if(this.state.correct === true){
-        setTimeout(() => {
-          this.advanceRound()
-        }, 5000)
+        // setTimeout(() => {
+        //   this.advanceRound()
+        // }, 5000)
+        setTimeout(this.advanceRound(), 5000)
         return(
           <Paper>
             <h1 style={{color:'white', fontSize:'50px'}}>Rock On!</h1>
