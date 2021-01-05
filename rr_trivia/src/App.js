@@ -7,14 +7,20 @@ import "firebase/auth";
 import Login from './Login.js';
 import QuizPage from './QuizPage.js';
 import Home from './Home.js';
-import Categories from './Categories.js'
+import Categories from './Categories.js';
+import PasswordReset from './PasswordReset.js';
+import ProfilePage from './ProfilePage.js';
+import SignIn from './SignIn.js';
+import SignUp from './SignUp.js';
 
 
 
 
 function App() {
+  const user = null;
 
   return (
+    user ?
     <Router>
       <Route exact path="/" component={Home}/> 
       <Route exact path="/login" component={Login}/> 
@@ -36,6 +42,15 @@ function App() {
             />
       <Route exact path="/categories" component={Categories}/>  
     </Router>
+    : 
+    <Router> 
+      <SignIn path="/" />
+      <SignUp path="signUp" />
+    </Router>
+    
+     
+          // <PasswordReset path = "passwordReset" />
+ 
   )
 
  
