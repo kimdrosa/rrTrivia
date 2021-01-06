@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
@@ -12,6 +12,7 @@ import PasswordReset from './PasswordReset.js';
 import ProfilePage from './ProfilePage.js';
 import SignIn from './SignIn.js';
 import SignUp from './SignUp.js';
+import UserProvider from './providers/UserProvider.js';
 
 
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     user ?
+    <UserProvider>
     <Router>
       <Route exact path="/" component={Home}/> 
       <Route exact path="/login" component={Login}/> 
@@ -42,16 +44,22 @@ function App() {
             />
       <Route exact path="/categories" component={Categories}/>  
     </Router>
+    </UserProvider>
+    
     : 
+
+    <UserProvider>
     <Router> 
-      <SignIn path="/" />
-      <SignUp path="signUp" />
+        <Route exact path="/" component={SignIn}/> 
+        <Route exact path="/signup" component={SignUp}/> 
+        {/* <Route exact path="/passwordReset" component={PasswordReset}/>  */}
     </Router>
+    </UserProvider>
     
      
           // <PasswordReset path = "passwordReset" />
  
-  )
+  );
 
  
  

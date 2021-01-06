@@ -11,6 +11,6 @@ const firebaseConfig = {
     measurementId: "G-NETL2F0MJ1"
   };
 
-  const fireConfig = firebase.initializeApp(firebaseConfig);
-
-  export default fireConfig;
+  firebase.initializeApp(firebaseConfig);
+  export const auth = firebase.auth();
+  export const firestore = firebase.firestore();
