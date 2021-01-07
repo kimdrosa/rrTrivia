@@ -20,7 +20,7 @@ function App() {
   const user = null;
 
   return (
-    user ?
+    // user ?
     <Router>
       <Route exact path="/" component={Home}/> 
       <Route exact path="/login" component={Login}/> 
@@ -42,11 +42,11 @@ function App() {
             />
       <Route exact path="/categories" component={Categories}/>  
     </Router>
-    : 
-    <Router> 
-      <SignIn path="/" />
-      <SignUp path="signUp" />
-    </Router>
+    // : 
+    // <Router> 
+    //   <SignIn path="/" />
+    //   <SignUp path="signUp" />
+    // </Router>
     
      
           // <PasswordReset path = "passwordReset" />

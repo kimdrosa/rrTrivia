@@ -247,8 +247,8 @@ class QuizPage extends React.Component {
     return(
     <div>
       <div style={{display:'inline'}}>
-        <Count>{this.state.numQuestions}/{this.state.questions.length}
-        <Score>Score: {this.state.score}</Score></Count>
+        <Count>
+        <Score>Score: {this.state.score}</Score>
         <Time>
         <Timer   initialTime={this.state.time}
           direction="backward"
@@ -262,6 +262,7 @@ class QuizPage extends React.Component {
         <Timer.Seconds />
         </Timer>
         </Time>
+        </Count>
       </div>
 
     <QuestionPaper>
@@ -362,8 +363,9 @@ class QuizPage extends React.Component {
       return(
       <div>
         <div style={{display:'inline'}}>
-          <Count>{this.state.numQuestions}/{this.state.questions.length}
-          <Score>Score: {this.state.score}</Score></Count>
+          <Count>
+            <Score>Score: {this.state.score}</Score>
+          </Count>
         </div>
   
      
