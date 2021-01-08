@@ -8,6 +8,7 @@ import Login from './Login.js';
 import QuizPage from './QuizPage.js';
 import Home from './Home.js';
 import Categories from './Categories.js';
+import SingleOrMultiple from './SingleOrMultiple.js';
 import PasswordReset from './PasswordReset.js';
 import ProfilePage from './ProfilePage.js';
 import SignIn from './SignIn.js';
@@ -41,6 +42,7 @@ function App() {
               }}
             />
       <Route exact path="/categories" component={Categories}/>  
+      <Route exact path="/selectSingleOrMixed" component={SingleOrMultiple}/>  
     </Router>
     // : 
     // <Router> 
