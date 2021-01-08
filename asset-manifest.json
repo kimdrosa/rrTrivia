@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/rrTrivia/static/css/main.519a7089.chunk.css",
-    "main.js": "/rrTrivia/static/js/main.b444ee14.chunk.js",
-    "main.js.map": "/rrTrivia/static/js/main.b444ee14.chunk.js.map",
-    "runtime-main.js": "/rrTrivia/static/js/runtime-main.1dfbf6f7.js",
-    "runtime-main.js.map": "/rrTrivia/static/js/runtime-main.1dfbf6f7.js.map",
-    "static/js/2.a5f45581.chunk.js": "/rrTrivia/static/js/2.a5f45581.chunk.js",
-    "static/js/2.a5f45581.chunk.js.map": "/rrTrivia/static/js/2.a5f45581.chunk.js.map",
-    "static/js/3.292bad83.chunk.js": "/rrTrivia/static/js/3.292bad83.chunk.js",
-    "static/js/3.292bad83.chunk.js.map": "/rrTrivia/static/js/3.292bad83.chunk.js.map",
+    "main.js": "/rrTrivia/static/js/main.a4f688ba.chunk.js",
+    "main.js.map": "/rrTrivia/static/js/main.a4f688ba.chunk.js.map",
+    "runtime-main.js": "/rrTrivia/static/js/runtime-main.2c490042.js",
+    "runtime-main.js.map": "/rrTrivia/static/js/runtime-main.2c490042.js.map",
+    "static/js/2.0238b189.chunk.js": "/rrTrivia/static/js/2.0238b189.chunk.js",
+    "static/js/2.0238b189.chunk.js.map": "/rrTrivia/static/js/2.0238b189.chunk.js.map",
+    "static/js/3.2064c8ad.chunk.js": "/rrTrivia/static/js/3.2064c8ad.chunk.js",
+    "static/js/3.2064c8ad.chunk.js.map": "/rrTrivia/static/js/3.2064c8ad.chunk.js.map",
     "index.html": "/rrTrivia/index.html",
     "static/css/main.519a7089.chunk.css.map": "/rrTrivia/static/css/main.519a7089.chunk.css.map",
-    "static/js/2.a5f45581.chunk.js.LICENSE.txt": "/rrTrivia/static/js/2.a5f45581.chunk.js.LICENSE.txt",
+    "static/js/2.0238b189.chunk.js.LICENSE.txt": "/rrTrivia/static/js/2.0238b189.chunk.js.LICENSE.txt",
     "static/media/starFist.6bc1bee7.jpg": "/rrTrivia/static/media/starFist.6bc1bee7.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1dfbf6f7.js",
-    "static/js/2.a5f45581.chunk.js",
+    "static/js/runtime-main.2c490042.js",
+    "static/js/2.0238b189.chunk.js",
     "static/css/main.519a7089.chunk.css",
-    "static/js/main.b444ee14.chunk.js"
+    "static/js/main.a4f688ba.chunk.js"
   ]
 }
