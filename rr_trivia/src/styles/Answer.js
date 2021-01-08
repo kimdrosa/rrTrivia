@@ -8,6 +8,7 @@ const Answer = styled.button`
     border-style: solid;
     border-color: black;
     border-width: 2px;
+    border-radius:50px;
     width: 100%;
     padding:14px;
 

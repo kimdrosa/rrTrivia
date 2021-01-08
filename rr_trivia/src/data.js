@@ -87,4 +87,16 @@ csv()
   console.log(err)
 })
 
-
+csv()
+.fromFile('questions/mix.csv')
+.then((questions) => {
+  fs.writeFile('questions/mix.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("mix array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
