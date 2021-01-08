@@ -1,16 +1,24 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import {auth} from './firebase_config.js';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const signInWithEmailAndPasswordHandler = 
-            (event,email, password) => {
-                event.preventDefault();
-    };
+    // const signInWithEmailAndPasswordHandler = 
+    //         (event,email, password) => {
+    //             event.preventDefault();
+    // };
+    const signInWithEmailAndPasswordHandler = (event, email, password) => {
+        event.preventDefault();
+        auth.signInWithEmailAndPassword(email, password).catch(error => {
+          setError("Error signing in with password and email!");
+          console.error("Error signing in with password and email", error);
+        });
+      };
 
-      const onChangeHandler = (event) => {
+    const onChangeHandler = (event) => {
           const {name, value} = event.currentTarget;
 
           if(name === 'userEmail') {
@@ -20,6 +28,8 @@ const SignIn = () => {
             setPassword(value);
           }
       };
+
+   
 
   return (
     <div className="mt-8">
@@ -35,7 +45,7 @@ const SignIn = () => {
             className="my-1 p-1 w-full"
             name="userEmail"
             value = {email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="E.g: your_email@email.com"
             id="userEmail"
             onChange = {(event) => onChangeHandler(event)}
           />
