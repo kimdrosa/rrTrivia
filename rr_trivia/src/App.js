@@ -23,7 +23,7 @@ function App() {
   return (
     // user ?
     <Router>
-      <Route exact path="/" component={Home}/> 
+      <Route exact path="/rrTrivia" component={Home}/> 
       <Route exact path="/login" component={Login}/> 
       <Route exact path="/quizPage" component={QuizPage}/>
       <Route
