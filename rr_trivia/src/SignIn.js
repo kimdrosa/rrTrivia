@@ -16,6 +16,7 @@ const SignIn = () => {
           setError("Error signing in with password and email!");
           console.error("Error signing in with password and email", error);
         });
+        
       };
 
     const onChangeHandler = (event) => {
@@ -61,9 +62,11 @@ const SignIn = () => {
             id="userPassword"
             onChange = {(event) => onChangeHandler(event)}
           />
+         
           <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick = {(event) => {signInWithEmailAndPasswordHandler(event, email, password)}}>
             Sign in
           </button>
+         
         </form>
         <p className="text-center my-3">or</p>
        
