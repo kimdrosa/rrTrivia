@@ -6,6 +6,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import Login from './Login.js';
 import QuizPage from './QuizPage.js';
+import UserStats from './UserStats.js';
 import Home from './Home.js';
 import Categories from './Categories.js';
 import PasswordReset from './PasswordReset.js';
@@ -22,14 +23,17 @@ function Application() {
   console.log(user);
 
   return (
-    user ?
+    user != undefined ?
     
   
     <Router>
-      <Route exact path="/" component={Home}/> 
+      <Route exact path="/" render={()=>(
+        <Home user={user}/>
+
+      )}/> 
       <Route exact path="/login" component={Login}/> 
       <Route exact path="/quizPage" component={QuizPage}/>
-      <Route
+      {/* <Route
               exact
               path="/quizPage/:category"
               name="quizPage"
@@ -43,7 +47,10 @@ function Application() {
                   </div>
                 );
               }}
-            />
+            /> */}
+      <Route exact path="/userStats" render={()=> (
+        <UserStats user={user} />
+      )}/>
       <Route exact path="/categories" component={Categories}/>  
     </Router>
 

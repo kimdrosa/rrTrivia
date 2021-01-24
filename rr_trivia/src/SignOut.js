@@ -10,9 +10,10 @@ const handleSignOut = (event) =>
     auth.signOut().catch((error) => {
     console.error(error);
   });
+  console.log('SIGNING OUT')
 }
 
-  console.log('SIGNING OUT')
+
 
   return (
       <button onClick={(event)=>{handleSignOut(event)}}>Sign Out</button>

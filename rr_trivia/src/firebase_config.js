@@ -15,20 +15,22 @@ const firebaseConfig = {
   // const userRef = firestore.doc(`users/${user.uid}`);
   // const snapshot = await userRef.get();
 
-  export const auth = firebase.auth();
-  export const firestore = firebase.firestore();
+
+
+  
 
   export const generateUserDocument = async (user, additionalData) => {
     if (!user) return;
     const userRef = firestore.doc(`users/${user.uid}`);
     const snapshot = await userRef.get();
     if (!snapshot.exists) {
-      const { email, displayName, photoURL } = user;
+      const { email, displayName, highScore, highestLevel, photoURL } = user;
       try {
         await userRef.set({
           displayName,
           email,
-          photoURL,
+          highScore,
+      
           ...additionalData
         });
       } catch (error) {
@@ -49,6 +51,9 @@ const firebaseConfig = {
       console.error("Error fetching user", error);
     }
   }
+
+  export const auth = firebase.auth();
+  export const firestore = firebase.firestore();
 
   // const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
   //   event.preventDefault();

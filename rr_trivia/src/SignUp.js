@@ -5,12 +5,13 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [highScore, setHighScore] = useState(0);
   const [error, setError] = useState(null);
   const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
     event.preventDefault();
     try{
       const {user} = await auth.createUserWithEmailAndPassword(email, password);
-      generateUserDocument(user, {displayName});
+      generateUserDocument(user, {displayName, highScore});
     }
     catch(error){
       setError('Error Signing up with email and password');
@@ -48,7 +49,6 @@ const SignUp = () => {
             className="my-1 p-1 w-full "
             name="displayName"
             value={displayName}
-            placeholder="E.g: Faruq"
             id="displayName"
             onChange={event => onChangeHandler(event)}
           />
@@ -60,7 +60,7 @@ const SignUp = () => {
             className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: faruq123@gmail.com"
+            placeholder="E.g: "
             id="userEmail"
             onChange={event => onChangeHandler(event)}
           />
