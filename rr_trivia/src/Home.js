@@ -11,7 +11,9 @@ import "firebase/database";
 
 import SignUp from './SignUp.js';
 const database = firebase.database();
+
 const Home = (props) => {
+   
     const[highScore, setScore] = React.useState(100)
     let userId = auth.currentUser.uid;
   const changeHighScore = () => {
@@ -20,30 +22,8 @@ const Home = (props) => {
   }
 
   changeHighScore();
-//    console.log(firebase.database().ref('/users/' + userId))
-//    let user;
-//    firestore.collection("users").doc(userId).get().then((profile) => {
-//        console.log(profile)
-//    });
-//    console.log(user)
-//   console.log(firestore.collection("users").doc(userId).get())
-    // render() {
-    //     const user = props.user;
-    //     console.log(user);
-    //     auth.currentUser.updateProfile({
-    //         highScore : 100
-    //     }).then( () => {
-    //         console.log(user)
-    //     }
 
-    //     ).catch((error) =>
-    //     {   console.log(error)
 
-    //     })
-    // //     // updateHighScore();
-        // let currentUser = firestore.collection('users').get();
-        // console.log(currentUser)
-        // console.log(auth.currentUser.uid)
 
        
         return (
@@ -56,6 +36,9 @@ const Home = (props) => {
                         <Button onClick={() => {console.log('enter')}}>Enter</Button>
                     </Link>
                 </Paper>
+                <Link to='/userStats'>
+                        <Button onClick={() => {console.log('enter')}}>User Stats</Button>
+                    </Link>
             </div>
         )
     }

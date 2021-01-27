@@ -48,9 +48,7 @@ function Application() {
                 );
               }}
             /> */}
-      <Route exact path="/userStats" render={()=> (
-        <UserStats user={user} />
-      )}/>
+      <Route exact path="/userStats" component={UserStats}/>
       <Route exact path="/categories" component={Categories}/>  
     </Router>
 
