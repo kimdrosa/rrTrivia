@@ -248,6 +248,7 @@ class QuizPage extends React.Component {
         </Paper>
       )
     } else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && (this.state.score > 500 && this.state.score <= 1000)){
+      this.checkHighScore();
       return(
         <Paper>
           <H1>Not Bad!</H1>
@@ -258,6 +259,7 @@ class QuizPage extends React.Component {
         </Paper>
       )
     }  else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && (this.state.score > 1000 && this.state.score <= 1400)){
+      this.checkHighScore();
       return(
         <Paper>
           <H1>Good!</H1>
@@ -271,6 +273,7 @@ class QuizPage extends React.Component {
     
 
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 1500){
+      this.checkHighScore();
         setTimeout(this.advanceRound(), 5000)
         
 
