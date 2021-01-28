@@ -12,7 +12,7 @@ import advanced from './questions/advanced.json';
 import shutUpAndSing from './questions/shutUpAndSing.json';
 import hallOfFame from './questions/hallOfFame.json'
 import QuizPage from './QuizPage.js';
-
+import SignOut from './SignOut.js';
 
 function Categories() {
     const [category, setCategory] = useState(null);
@@ -20,9 +20,10 @@ function Categories() {
     if(category === null) {
     return(
            
-   
+    
         <div className="Categories">
-
+            <SignOut/>
+   
    
         <Paper>
           <H1>Choose a Category </H1>

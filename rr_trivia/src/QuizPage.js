@@ -14,6 +14,9 @@ import Count from './styles/Count.js';
 import Button from './styles/Button.js';
 import Time from './styles/Time.js';
 import Timer from 'react-compound-timer';
+import firebase from 'firebase';
+import "firebase/database";
+import {auth} from './firebase_config.js';
 
 
 
@@ -25,6 +28,9 @@ class QuizPage extends React.Component {
         this.isCorrect = this.isCorrect.bind(this);
         this.advanceRound = this.advanceRound.bind(this);
         this.getQuestionsForRound = this.getQuestionsForRound.bind(this);
+        this.getHighScore = this.getHighScore.bind(this);
+        this.checkHighScore = this.checkHighScore.bind(this);
+
         this.state = {
             questions: [],
             currentQuestion: 0,
@@ -35,8 +41,7 @@ class QuizPage extends React.Component {
             isTimeUp: false,
             round: 'basic',
             roundString: '',
-            time: 240000
-           
+            time: 20000
         };
     }
 
@@ -54,11 +59,46 @@ class QuizPage extends React.Component {
       this.setState({
         questions : questions
       })
-     
-    
+      this.getHighScore()
+      // console.log(this.state.highScore)
 
     }
 
+
+   //pulls user high score from firebase
+    getHighScore() {
+      const userId = auth.currentUser.uid;
+      const db = firebase.firestore();
+      const userDoc = db.collection('users').doc(userId);
+      userDoc.get().then((doc) => {
+        this.setState({
+          highScore : doc.data().highScore
+        })
+      }) 
+      .catch((error) => {
+        console.log(error)
+      })
+    }
+
+    checkHighScore() {
+      const userId = auth.currentUser.uid;
+      const db = firebase.firestore();
+      const userDoc = db.collection("users").doc(userId);
+      const userData = {}
+
+       userDoc.get().then((doc) => {
+         userData = doc.data();
+       })
+       .catch((error) => {
+         console.log(error)
+       })
+
+      if( this.state.score > this.state.highScore) {
+        userDoc.set({...userData, highScore : this.state.score})
+      }
+
+
+    }
 
     advanceRound() {
  
@@ -172,7 +212,7 @@ class QuizPage extends React.Component {
     //and the question with four answers
     render () {
     
-
+      console.log(this.state)
 
     //NORMAL ROUND
     if(this.state.round === 'basic') {
@@ -197,6 +237,7 @@ class QuizPage extends React.Component {
       let currentQuestion = questions[currentQuestionIndex];
       
     if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score <= 500){
+      this.checkHighScore();
       return(
         <Paper>
           <H1>Beginner</H1>
@@ -207,6 +248,7 @@ class QuizPage extends React.Component {
         </Paper>
       )
     } else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && (this.state.score > 500 && this.state.score <= 1000)){
+      this.checkHighScore();
       return(
         <Paper>
           <H1>Not Bad!</H1>
@@ -217,6 +259,7 @@ class QuizPage extends React.Component {
         </Paper>
       )
     }  else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && (this.state.score > 1000 && this.state.score <= 1400)){
+      this.checkHighScore();
       return(
         <Paper>
           <H1>Good!</H1>
@@ -230,6 +273,7 @@ class QuizPage extends React.Component {
     
 
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 1500){
+      this.checkHighScore();
         setTimeout(this.advanceRound(), 5000)
         
 
