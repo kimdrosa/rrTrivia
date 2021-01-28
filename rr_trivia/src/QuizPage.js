@@ -407,8 +407,9 @@ class QuizPage extends React.Component {
       return(
       <div>
         <div style={{display:'inline'}}>
-          <Count>{this.state.numQuestions}/{this.state.questions.length}
-          <Score>Score: {this.state.score}</Score></Count>
+          <Count>
+            <Score>Score: {this.state.score}</Score>
+          </Count>
         </div>
   
      
