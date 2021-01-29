@@ -10,6 +10,7 @@ import UserStats from './UserStats.js';
 import Home from './Home.js';
 import Categories from './Categories.js';
 import PasswordReset from './PasswordReset.js';
+import SingleOrMultiple from './SingleOrMultiple.js';
 import { UserContext } from './providers/UserProvider.js';
 import SignIn from './SignIn.js';
 import SignUp from './SignUp.js';
@@ -33,21 +34,7 @@ function Application() {
       )}/> 
       <Route exact path="/login" component={Login}/> 
       <Route exact path="/quizPage" component={QuizPage}/>
-      {/* <Route
-              exact
-              path="/quizPage/:category"
-              name="quizPage"
-              render={(props) => {
-                console.log(props);
-                const category = props.match.params.category;
-                console.log(category)
-                return (
-                  <div>
-                    <QuizPage data/>
-                  </div>
-                );
-              }}
-            /> */}
+      <Route exact path="/selectSingleOrMixed" component={SingleOrMultiple}/>
       <Route exact path="/userStats" component={UserStats}/>
       <Route exact path="/categories" component={Categories}/>  
     </Router>
