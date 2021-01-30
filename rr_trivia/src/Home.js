@@ -39,8 +39,8 @@ const Home = (props) => {
 
                         <Button onClick={() => {console.log('enter')}}>Enter</Button>
                     </Link>
-                    <Link to='/userStats'>
-                        <a style={{padding:"20px"}} onClick={() => {console.log('enter')}}>My Stats</a>
+                    <Link style={{marginTop:"40px"}}to='/userStats'>
+                        <a  onClick={() => {console.log('enter')}}>My Stats</a>
                     </Link>
                 </Paper>
              

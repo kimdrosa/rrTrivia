@@ -45,6 +45,9 @@ function Categories() {
           
           </div>
         </Paper>
+        <Link style={{marginTop:"40px"}}to='/userStats'>
+          <a  onClick={() => {console.log('enter')}}>My Stats</a>
+        </Link>
     </div>
     )
     } else {
