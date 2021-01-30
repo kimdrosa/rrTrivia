@@ -7,7 +7,7 @@ const AdvancedQuestion = styled.div`
     padding:20px;
     margin: auto;
     width: 70%;
-    box-shadow: 5px 10px 8px #888888;
+
     margin-top: 80px;
 
     

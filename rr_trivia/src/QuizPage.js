@@ -41,7 +41,8 @@ class QuizPage extends React.Component {
             isTimeUp: false,
             round: 'basic',
             roundString: '',
-            time: 20000
+            time: 140000,
+            inBetweenRounds: false
         };
     }
 
@@ -101,10 +102,12 @@ class QuizPage extends React.Component {
     }
 
     advanceRound() {
+
  
       if(this.state.round === 'basic') {
     
         this.setState({
+          isBetweenRounds: false,
           round: 'radRound',
           questions: [],
           currentQuestion : 0,
@@ -214,6 +217,16 @@ class QuizPage extends React.Component {
     
       console.log(this.state)
 
+    //in between Basic and advanced round message 
+    if(this.state.inBetweenRounds === true) {
+       return (
+        <Paper>
+            <h1 style={{color:'white', fontSize:'50px'}}>Excellent!</h1>
+            <h2 style={{color:'white'}}> Your final score was {this.state.score}, Welcome to Sudden Death!!</h2>
+        </Paper>
+       )
+    }
+
     //NORMAL ROUND
     if(this.state.round === 'basic') {
       function getAnswers() {
@@ -274,10 +287,14 @@ class QuizPage extends React.Component {
 
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 1500){
       this.checkHighScore();
+      this.setState({
+        inBetweenRounds : true
+      })
         setTimeout(this.advanceRound(), 5000)
         
 
       return(
+     
           <Paper>
             <h1 style={{color:'white', fontSize:'50px'}}>Excellent!</h1>
             <h2 style={{color:'white'}}> Your final score was {this.state.score}, Welcome to Sudden Death!!</h2>
