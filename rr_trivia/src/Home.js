@@ -32,17 +32,18 @@ const Home = (props) => {
         return (
             <div className="Home">
 
-                <Paper style={{backgroundColor:"white"}}>
+                <Paper style={{backgroundColor:"white", display:"flex", flexDirection:"column", alignContent:"center"}}>
                     <H1 style={{color:"black"}}>Rebel Rock Trivia</H1>
-                    <img style={{width:'100%'}} src={starAndFist} />
+                    <img style={{width:'500px', alignSelf:'center'}} src={starAndFist} />
                     <Link to='/selectSingleOrMixed'>
 
                         <Button onClick={() => {console.log('enter')}}>Enter</Button>
                     </Link>
-                </Paper>
-                <Link to='/userStats'>
-                        <Button onClick={() => {console.log('enter')}}>User Stats</Button>
+                    <Link style={{marginTop:"40px"}}to='/userStats'>
+                        <a  onClick={() => {console.log('enter')}}>My Stats</a>
                     </Link>
+                </Paper>
+             
             </div>
         )
     }

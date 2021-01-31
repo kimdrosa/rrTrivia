@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {auth, generateUserDocument} from './firebase_config.js';
+import Paper from './styles/Paper.js';
+import H1 from './styles/H1.js';
+import Input from './styles/Input.js';
+import Button from './styles/Button.js';
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,68 +37,70 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="mt-8">
-      <h1 className="text-3xl mb-2 text-center font-bold">Sign Up</h1>
-      <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
+    <Paper style={{color:"white"}}>
+    <div >
+      <H1 style={{color:"white"}}>Sign Up</H1>
+      <div>
         {error !== null && (
-          <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
+          <div>
             {error}
           </div>
         )}
-        <form className="">
-          <label htmlFor="displayName" className="block">
-            Display Name:
+        <form style={{marginTop:"60px", fontWeight:"500", display:'flex', flexDirection:'column'}}>
+       
+          <label htmlFor="displayName">
+            User Name
           </label>
-          <input
+          <Input
             type="text"
-            className="my-1 p-1 w-full "
             name="displayName"
+            placeholder="yourUsername"
             value={displayName}
             id="displayName"
             onChange={event => onChangeHandler(event)}
           />
-          <label htmlFor="userEmail" className="block">
-            Email:
+       
+          <label htmlFor="userEmail">
+            Email
           </label>
-          <input
+          <Input
             type="email"
-            className="my-1 p-1 w-full"
             name="userEmail"
             value={email}
-            placeholder="E.g: "
+            placeholder="youremail@email.com "
             id="userEmail"
             onChange={event => onChangeHandler(event)}
           />
-          <label htmlFor="userPassword" className="block">
-            Password:
+          <label htmlFor="userPassword">
+            Password
           </label>
-          <input
+          <Input
             type="password"
-            className="mt-1 mb-3 p-1 w-full"
             name="userPassword"
             value={password}
-            placeholder="Your Password"
+            placeholder="your password"
             id="userPassword"
             onChange={event => onChangeHandler(event)}
           />
-          <button
-            className="bg-green-400 hover:bg-green-500 w-full py-2 text-white"
+          <Button
+            style={{alignSelf:"center", width:"150px"}}
             onClick={event => {
               createUserWithEmailAndPasswordHandler(event, email, password);
             }}
           >
             Sign up
-          </button>
+          </Button>
         </form>
        
-        <p className="text-center my-3">
+        <p>
           Already have an account?{" "}
-          <Link to="/" className="text-blue-500 hover:text-blue-600">
+          <Link to="/" style={{color:"#dfacfc"}}>
             Sign in here
           </Link>
         </p>
       </div>
     </div>
+    </Paper>
   );
 };
 export default SignUp;

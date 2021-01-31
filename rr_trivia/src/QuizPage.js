@@ -30,6 +30,8 @@ class QuizPage extends React.Component {
         this.getQuestionsForRound = this.getQuestionsForRound.bind(this);
         this.getHighScore = this.getHighScore.bind(this);
         this.checkHighScore = this.checkHighScore.bind(this);
+        this.setToBetweenRounds = this.setToBetweenRounds.bind(this);
+     
 
         this.state = {
             questions: [],
@@ -41,7 +43,8 @@ class QuizPage extends React.Component {
             isTimeUp: false,
             round: 'basic',
             roundString: '',
-            time: 20000
+            time: 240000,
+            inBetweenRounds: false
         };
     }
 
@@ -65,6 +68,12 @@ class QuizPage extends React.Component {
     }
 
 
+    setToBetweenRounds(){
+      this.setState({
+        inBetweenRounds : true
+      })
+
+    } 
    //pulls user high score from firebase
     getHighScore() {
       const userId = auth.currentUser.uid;
@@ -84,7 +93,7 @@ class QuizPage extends React.Component {
       const userId = auth.currentUser.uid;
       const db = firebase.firestore();
       const userDoc = db.collection("users").doc(userId);
-      const userData = {}
+      let userData = {}
 
        userDoc.get().then((doc) => {
          userData = doc.data();
@@ -101,10 +110,12 @@ class QuizPage extends React.Component {
     }
 
     advanceRound() {
+      console.log('advancing round')
  
       if(this.state.round === 'basic') {
     
         this.setState({
+          isBetweenRounds: false,
           round: 'radRound',
           questions: [],
           currentQuestion : 0,
@@ -205,14 +216,20 @@ class QuizPage extends React.Component {
 
       }
     }
-        
+    
+  
     
 
     //returns: number of questions out of total, the score, the time remaining 
     //and the question with four answers
     render () {
+
+
     
       console.log(this.state)
+
+  
+
 
     //NORMAL ROUND
     if(this.state.round === 'basic') {
@@ -273,15 +290,26 @@ class QuizPage extends React.Component {
     
 
      else if((currentQuestionIndex === questions.length || this.state.isTimeUp) && this.state.score >= 1500){
-      this.checkHighScore();
-        setTimeout(this.advanceRound(), 5000)
+    
+      
         
 
       return(
+        <div>
+        <Timer initialTime={500}
+        direction="backward"
+  
+        checkpoints={[
+          {time: 0,
+          callback: () => {this.advanceRound()}}
+        ]}>
+           </Timer>
+     
           <Paper>
             <h1 style={{color:'white', fontSize:'50px'}}>Excellent!</h1>
             <h2 style={{color:'white'}}> Your final score was {this.state.score}, Welcome to Sudden Death!!</h2>
           </Paper>
+          </div>
         ) 
       } else if(questions.length > 0) {
           if(!currentQuestion.answers){
