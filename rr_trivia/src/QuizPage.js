@@ -43,7 +43,7 @@ class QuizPage extends React.Component {
             isTimeUp: false,
             round: 'basic',
             roundString: '',
-            time: 140000,
+            time: 240000,
             inBetweenRounds: false
         };
     }

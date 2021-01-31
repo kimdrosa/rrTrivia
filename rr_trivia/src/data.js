@@ -100,3 +100,45 @@ csv()
 }) . catch((err) => {
   console.log(err)
 })
+
+csv()
+.fromFile('questions/rebelRockers.csv')
+.then((questions) => {
+  fs.writeFile('questions/rebelRockers.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("rebel rockers array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
+
+csv()
+.fromFile('questions/whoStoleTheSoul.csv')
+.then((questions) => {
+  fs.writeFile('questions/whoStoleTheSoul.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("who stole the soul array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
+
+csv()
+.fromFile('questions/hallOfLame.csv')
+.then((questions) => {
+  fs.writeFile('questions/hallOfLame.json', JSON.stringify(questions, null, 4), (err) => {
+    if (err) {
+        throw err;
+    }
+    console.log("hall of lame array is saved.");
+  });
+  
+}) . catch((err) => {
+  console.log(err)
+})
